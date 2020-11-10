@@ -14,35 +14,35 @@ function SimpleCenteredSection(props) {
     const body1 = useRef(null);
     const body2 = useRef(null);
     const body3 = useRef(null);
-    let timeline = null
+    //let timeline = null
 
-    // useEffect(() => {
+    useEffect(() => {
 
-    //     let timeline = gsap.timeline({
-    //         scrollTrigger: {
-    //             trigger: SimpleCenteredSectionRef.current,
-    //             start: "center center",
-    //             end: "bottom top",
-    //             markers: true,
-    //             scrub: true,
-    //             id: "center timeline",
+        //     let timeline = gsap.timeline({
+        //         scrollTrigger: {
+        //             trigger: SimpleCenteredSectionRef.current,
+        //             start: "center center",
+        //             end: "bottom top",
+        //             markers: true,
+        //             scrub: true,
+        //             id: "center timeline",
 
-    //         }
-    //     });
-    //     timeline.fromTo(
-    //         [body1.current],
-    //         { opacity: 0, scale: .8 },
-    //         { opacity: 1, scale: 1 }
-    //     )
+        //         }
+        //     });
+        //     timeline.fromTo(
+        //         [body1.current],
+        //         { opacity: 0, scale: .8 },
+        //         { opacity: 1, scale: 1 }
+        //     )
 
-    //     timeline.fromTo(
-    //         [body2.current],
-    //         { opacity: 0, scale: .8 },
-    //         { opacity: 1, scale: 1 }
-    //     )
+        //     timeline.fromTo(
+        //         [body2.current],
+        //         { opacity: 0, scale: .8 },
+        //         { opacity: 1, scale: 1 }
+        //     )
 
 
-    // }, [timeline, body1, body2, body3]);
+    }, [body1, body2, body3]);
 
 
     return (

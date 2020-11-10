@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from "react";
+import React, { useRef, useEffect } from "react";
 import { gsap } from "gsap"
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import './Nav.scss';
@@ -13,7 +13,7 @@ function Nav(props) {
     const NavRef = useRef(null);
     const navButton = useRef(null);
     const logoImage = useRef(null);
-    let timeline = null
+    //let timeline = null
 
 
     useEffect(() => {

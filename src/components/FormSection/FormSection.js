@@ -15,35 +15,35 @@ function FormSection(props) {
     const FormSectionRef = useRef(null);
     const body1 = useRef(null);
     const image1 = useRef(null);
-    let timeline = null
+    //let timeline = null
 
-    // useEffect(() => {
+    useEffect(() => {
 
-    //     let timeline = gsap.timeline({
-    //         scrollTrigger: {
-    //             trigger: FormSectionRef.current,
-    //             start: "center center",
-    //             end: "bottom top",
-    //             markers: true,
-    //             scrub: true,
-    //             id: "center timeline",
+        //     let timeline = gsap.timeline({
+        //         scrollTrigger: {
+        //             trigger: FormSectionRef.current,
+        //             start: "center center",
+        //             end: "bottom top",
+        //             markers: true,
+        //             scrub: true,
+        //             id: "center timeline",
 
-    //         }
-    //     });
-    //     timeline.fromTo(
-    //         [body1.current],
-    //         { opacity: 0, scale: .8 },
-    //         { opacity: 1, scale: 1 }
-    //     )
+        //         }
+        //     });
+        //     timeline.fromTo(
+        //         [body1.current],
+        //         { opacity: 0, scale: .8 },
+        //         { opacity: 1, scale: 1 }
+        //     )
 
-    //     timeline.fromTo(
-    //         [image1.current],
-    //         { opacity: 0, scale: .8 },
-    //         { opacity: 1, scale: 1 }
-    //     )
+        //     timeline.fromTo(
+        //         [image1.current],
+        //         { opacity: 0, scale: .8 },
+        //         { opacity: 1, scale: 1 }
+        //     )
 
 
-    // }, [timeline, body1, image1]);
+    }, [body1, image1]);
 
 
     return (
