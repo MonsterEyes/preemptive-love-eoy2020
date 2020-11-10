@@ -1,6 +1,9 @@
+## Node 12.18.3
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is for Preemptive Love's End of year 2020 landing page. 
 
 ## Available Scripts
 
