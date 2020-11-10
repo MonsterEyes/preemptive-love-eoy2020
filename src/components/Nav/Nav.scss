@@ -1,0 +1,26 @@
+nav {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    z-index: 1;
+    .content-container {
+        width: 90vw;
+       display: flex;
+       transition: all .5s;
+       padding: 3rem 0 1rem;
+    }
+    &.scrolled {
+        .content-container {
+            padding: 1rem 0 1rem;
+         }
+    }
+    button {
+        background: transparent;
+        border: 2px solid white;
+        color: white;
+        padding: 5px 12px;
+        display: inline-block;
+        margin-left: auto;
+    } 
+        
+}
