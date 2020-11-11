@@ -55,10 +55,13 @@ function App() {
 
 
 
-  const bodyComponents = revealArr.map((body) =>
-    <RevealBody key={body.key}
+  const bodyComponents = revealArr.map((body, index) =>
+    <RevealBody
+      key={body.key}
 
       pcolor={body.pcolor}
+
+      index={index}
 
       body1={body.body1}
       img1={body.img1}
@@ -84,8 +87,11 @@ function App() {
         {bodyComponents}
       </div>
 
+
+
+
       <SimpleCenteredSection
-        body1={`A world where we belong to each other. Where we can stop the next war, before it starts.`}>
+        body1={["A world where we belong to each other ", <br />, "Where we can stop the next war, before it starts."]}>
       </SimpleCenteredSection>
 
       <FormSection

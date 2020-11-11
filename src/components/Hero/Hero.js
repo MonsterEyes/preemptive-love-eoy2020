@@ -53,7 +53,7 @@ function Hero() {
         timeline.fromTo(
             [VideoStillContainerRef.current],
             { scale: .9, opacity: 0, marginTop: -80 },
-            { scale: 1, opacity: 1, marginTop: -100, delay: .5, duration: 1.2, repeat: 0 }
+            { scale: 1, opacity: 1, marginTop: -100, delay: .5, duration: 1.2, repeat: 0 },
         )
     }, [timeline]);
 

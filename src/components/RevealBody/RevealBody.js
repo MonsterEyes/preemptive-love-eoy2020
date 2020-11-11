@@ -14,12 +14,14 @@ function RevealBody(props) {
     const image1 = useRef(null);
     const image2 = useRef(null);
     const image3 = useRef(null);
+    const pRef = useRef(null);
     const body1 = useRef(null);
     const body2 = useRef(null);
     const body3 = useRef(null);
     const progressRef = useRef(null);
     let timeline = null
     let timelineTwo = null
+    let timelineThree = null
 
 
 
@@ -48,13 +50,15 @@ function RevealBody(props) {
         timeline.fromTo(
             [image1.current],
             { y: "0", opacity: 0, scale: .8 },
-            { y: "-150px", opacity: 1, scale: 1, }
+            { y: "-150px", opacity: 1, scale: 1 }
+            , '-=.5'
         )
 
         timeline.fromTo(
             [image1.current],
-            { opacity: 1, },
-            { opacity: 0, }
+            { y: "-150px", scale: 1, opacity: 1, },
+            { y: "-300px", scale: 1.2, opacity: 0, },
+
         )
         timeline.fromTo(
             [body2.current],
@@ -64,7 +68,8 @@ function RevealBody(props) {
         timeline.fromTo(
             [image2.current],
             { y: "100px", opacity: 0, scale: .8 },
-            { y: "0px", opacity: 1, scale: 1, }
+            { y: "0px", opacity: 1, scale: 1, },
+            '-=.5'
         )
 
 
@@ -98,18 +103,38 @@ function RevealBody(props) {
         )
 
 
+        let timelineThree = gsap.timeline({
+            scrollTrigger: {
+                trigger: revealSection.current,
+                start: "center center",
+                end: "bottom top",
+                markers: true,
+                scrub: true,
+                id: "center timeline",
+
+            }
+        });
+
+        timelineThree.fromTo(
+            [pRef.current],
+            { y: "0", },
+            { y: "-50px", }
+        )
 
 
-    }, [timeline, image1, image2, image3, body1, body2, body3, timelineTwo]);
+
+
+    }, [timeline, image1, image2, image3, pRef, body1, body2, body3, timelineTwo, timelineThree]);
 
 
     return (
-        <section ref={revealSection} className="reveal-section">
+        <section ref={revealSection} className={`reveal-section reveal-section-${props.index} `}>
             <div className="content-container">
                 <div className="reveal-body">
 
 
-                    <p className={`pClass ${props.pcolor} `}>
+                    <p ref={pRef} className={`pClass ${props.pcolor} `}>
+
                         <span ref={body1}>{props.body1} </span><br />
                         <span className="header" ref={body2}>{props.body2} </span>
                         {/* <span ref={body3}>{props.body3} </span> */}
