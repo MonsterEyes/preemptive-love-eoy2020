@@ -27,7 +27,7 @@ function Hero() {
     const timelineEarth = gsap.timeline({ repeat: 0 });
 
     let earthImage = backgroundImage
-    if (window.innerWidth < 400) {
+    if (window.innerWidth < 768) {
         earthImage = backgroundImageSm
     }
 

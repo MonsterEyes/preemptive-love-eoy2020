@@ -1,3 +1,6 @@
+
+
+
 import './App.scss';
 import Nav from './components/Nav/Nav'
 import Hero from './components/Hero/Hero'
@@ -16,6 +19,7 @@ import section3Image2 from './assets/images/section3-image2.jpg'
 
 
 function App() {
+
   const revealArr = [
     {
       key: '1',

@@ -1,5 +1,5 @@
 import React, { useRef, useEffect } from "react";
-import { gsap } from "gsap"
+import { gsap, Power3 } from "gsap"
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import './RevealBody.scss';
 
@@ -21,14 +21,12 @@ function RevealBody(props) {
     const progressRef = useRef(null);
     let timeline = null
     let timelineTwo = null
-    let timelineThree = null
-
-
 
 
 
     useEffect(() => {
 
+        //Sequence
         let timeline = gsap.timeline({
             scrollTrigger: {
                 trigger: revealSection.current,
@@ -39,8 +37,8 @@ function RevealBody(props) {
                 scrub: true,
                 id: "center timeline",
                 pinReparent: true,
-
-            }
+            },
+            ease: Power3.easeInOut
         });
         timeline.fromTo(
             [body1.current],
@@ -57,13 +55,14 @@ function RevealBody(props) {
         timeline.fromTo(
             [image1.current],
             { y: "-150px", scale: 1, opacity: 1, },
-            { y: "-300px", scale: 1.1, opacity: 0, },
+            { y: "-200px", scale: 1.03, opacity: .6, },
 
         )
         timeline.fromTo(
             [body2.current],
             { opacity: 0, scale: .8 },
-            { opacity: 1, scale: 1 }
+            { opacity: 1, scale: 1 },
+            '-=.5'
         )
         timeline.fromTo(
             [image2.current],
@@ -72,18 +71,7 @@ function RevealBody(props) {
             '-=.5'
         )
 
-
-        // timeline.fromTo(
-        //     [body3.current],
-        //     { opacity: 0, scale: .8 },
-        //     { opacity: 1, scale: 1, delay: 1 }
-        // )
-        // timeline.fromTo(
-        //     [image3.current],
-        //     { y: "100px", opacity: 0, scale: .8 },
-        //     { y: "0px", opacity: 1, scale: 1, }
-        // )
-
+        //Entire Time, all objects set with start 0
         let timelineTwo = gsap.timeline({
             scrollTrigger: {
                 trigger: revealSection.current,
@@ -95,36 +83,40 @@ function RevealBody(props) {
 
             }
         });
+        timelineTwo.fromTo(
+            [pRef.current],
+            { y: "0", },
+            { y: "-50px", },
+            0
+        )
 
         timelineTwo.fromTo(
             [progressRef.current],
             { scaleY: .1 },
-            { scaleY: 10 }
+            { scaleY: 10 },
+            0
         )
-
 
         let timelineThree = gsap.timeline({
             scrollTrigger: {
                 trigger: revealSection.current,
-                start: "center center",
-                end: "bottom top",
-                markers: false,
+                start: "bottom 99%",
+                end: "bottom",
+                markers: true,
                 scrub: true,
-                id: "center timeline",
+                id: "after timeline",
 
             }
         });
-
         timelineThree.fromTo(
-            [pRef.current],
-            { y: "0", },
-            { y: "-50px", }
+            [image2.current],
+            { y: "0px", opacity: 1, scale: 1, },
+            { y: "0px", opacity: 1, scale: 1.2, }
         )
 
 
 
-
-    }, [timeline, image1, image2, image3, pRef, body1, body2, body3, timelineTwo, timelineThree]);
+    }, [timeline, image1, image2, image3, pRef, body1, body2, body3, timelineTwo]);
 
 
     return (

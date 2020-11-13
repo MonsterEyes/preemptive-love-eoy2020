@@ -17,7 +17,7 @@
     background-color:black;
     img {
       width: 100%;
-      @media (max-width:1024px) and (min-width:400px) {
+      @media (max-width:1200px) and (min-width:768px) {
         position: absolute;
         bottom: 0;
         left: 0;
@@ -29,7 +29,7 @@
     min-height: 100vh;
     display: grid;
     align-items: center;
-    .intro-text {
+    .intro-text { 
       color: white;
       position: relative;
       font-size: 4.5vw;
