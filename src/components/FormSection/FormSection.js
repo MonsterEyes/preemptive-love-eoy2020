@@ -13,34 +13,44 @@ if (typeof window !== `undefined`) {
 
 function FormSection(props) {
     const FormSectionRef = useRef(null);
+    const formRef = useRef(null);
     const body1 = useRef(null);
     const image1 = useRef(null);
     //let timeline = null
 
     useEffect(() => {
 
-        //     let timeline = gsap.timeline({
-        //         scrollTrigger: {
-        //             trigger: FormSectionRef.current,
-        //             start: "center center",
-        //             end: "bottom top",
-        //             markers: true,
-        //             scrub: true,
-        //             id: "center timeline",
+        let timeline = gsap.timeline({
+            scrollTrigger: {
+                trigger: FormSectionRef.current,
+                start: "top bottom",
+                end: "+=500",
+                markers: true,
+                scrub: true,
+                id: "Form timeline",
 
-        //         }
-        //     });
-        //     timeline.fromTo(
-        //         [body1.current],
-        //         { opacity: 0, scale: .8 },
-        //         { opacity: 1, scale: 1 }
-        //     )
+            }
+        });
+        timeline.fromTo(
+            [body1.current],
+            { opacity: 0, scale: .9 },
+            { opacity: 1, scale: 1 },
+            0
+        )
 
-        //     timeline.fromTo(
-        //         [image1.current],
-        //         { opacity: 0, scale: .8 },
-        //         { opacity: 1, scale: 1 }
-        //     )
+        timeline.fromTo(
+            [image1.current],
+            { opacity: 0, scale: .9 },
+            { opacity: 1, scale: 1, delay: .2 },
+            0
+        )
+
+        timeline.fromTo(
+            [formRef.current],
+            { opacity: .5, y: 50 },
+            { opacity: 1, y: 0, delay: .4 },
+            0
+        )
 
 
     }, [body1, image1]);
@@ -50,7 +60,7 @@ function FormSection(props) {
         <section ref={FormSectionRef} className="form-section">
             <div className="content-container">
 
-                <div className="formside">
+                <div ref={formRef} className="formside">
                     <div className="fake-form">
                         Form goes here
                     </div>

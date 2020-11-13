@@ -13,12 +13,15 @@ import VideoTeaser from '../../assets/videos/To End War Silent Reel.mp4';
 
 
 function Hero() {
+    const HeroRef = useRef(null);
+    const introTextRef = useRef(null);
     const one = useRef(null);
     const two = useRef(null);
     const three = useRef(null);
     const headline = useRef(null);
     const video = useRef(null);
     const VideoStillContainerRef = useRef(null);
+
 
     const timeline = gsap.timeline({ repeat: 0 });
     const timelineEarth = gsap.timeline({ repeat: 0 });
@@ -32,12 +35,8 @@ function Hero() {
 
 
     useEffect(() => {
-        // TweenMax.fromTo(
-        //     [one.current, two.current, three.current],
-        //     0.5,
-        //     { y: "50px", opacity: 0 },
-        //     { y: "0px", opacity: 1, yoyo: true, repeat: -1 }
-        // );
+
+        //Text and Content
         timeline.fromTo(
             ".hero-text",
             { y: "50px", opacity: 0 },
@@ -45,10 +44,9 @@ function Hero() {
 
             "+=1"
         );
-
         timeline.fromTo(
             [headline.current],
-            { scale: .9, opacity: 0 },
+            { scale: 1.1, opacity: 0 },
             { scale: 1, opacity: 1, repeat: 0, duration: 2, }
         )
         timeline.fromTo(
@@ -58,17 +56,47 @@ function Hero() {
             "=-2"
         )
 
+        //Earth
         timelineEarth.fromTo(
             [video.current],
             { opacity: 0 },
             { opacity: 1, repeat: 0, duration: 9 }
         )
-    }, [timeline]);
+
+        //Scroll
+        let timelineScroll = gsap.timeline({
+            scrollTrigger: {
+                trigger: HeroRef.current,
+                start: "center center",
+                end: "bottom top",
+                markers: true,
+                scrub: true,
+                id: "timelineScroll timeline",
+                pinReparent: true,
+
+            }
+        });
+        timelineScroll.to(
+            [introTextRef.current],
+            { y: "80px" }, 0
+        )
+        timelineScroll.to(
+            [headline.current],
+            { y: "100px" }, 0
+        )
+        timelineScroll.to(
+            [VideoStillContainerRef.current],
+            { y: "120px" }, 0
+        )
+
+
+
+    }, [timeline, timelineEarth, introTextRef]);
 
 
 
     return (
-        <div className="Hero">
+        <div className="Hero" ref={HeroRef}>
 
 
 
@@ -82,7 +110,7 @@ function Hero() {
 
             <div className="content">
                 <div>
-                    <p className="intro-text">
+                    <p className="intro-text" ref={introTextRef}>
                         <span ref={one} className="hero-text">After the pandemic. </span>
                         <span ref={two} className="hero-text">After the election. </span><br />
                         <span ref={three} className="hero-text">After the violence and upheaval of 2020.</span>
