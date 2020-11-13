@@ -102,7 +102,7 @@ function RevealBody(props) {
                 trigger: revealSection.current,
                 start: "bottom 99%",
                 end: "bottom",
-                markers: true,
+                markers: false,
                 scrub: true,
                 id: "after timeline",
 
