@@ -57,7 +57,7 @@ function RevealBody(props) {
         timeline.fromTo(
             [image1.current],
             { y: "-150px", scale: 1, opacity: 1, },
-            { y: "-300px", scale: 1.2, opacity: 0, },
+            { y: "-300px", scale: 1.1, opacity: 0, },
 
         )
         timeline.fromTo(

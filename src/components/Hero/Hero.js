@@ -2,9 +2,14 @@ import React, { useRef, useEffect } from "react";
 import './Hero.scss';
 import gsap from 'gsap'
 //import { TweenMax } from "gsap";
+import ReactPlayer from "react-player";
+
+
 import backgroundImage from '../../assets/images/earth.jpg';
 import backgroundImageSm from '../../assets/images/earth-sm.jpg';
 import VideoStill from '../../assets/images/sample-video-pick.png';
+import PlayButton from '../../assets/images/play.svg';
+import VideoTeaser from '../../assets/videos/To End War Silent Reel.mp4';
 
 
 function Hero() {
@@ -36,8 +41,7 @@ function Hero() {
             ".hero-text",
             { y: "50px", opacity: 0 },
             { y: "0px", opacity: 1, stagger: 1.5 },
-            // { left: '50%', top: '50%', x: 20, xPercent: '-50', yPercent: '-50', opacity: 0 },
-            // { left: '0', top: '0', x: 0, xPercent: '0', yPercent: '0', opacity: 1, stagger: 1.5 },
+
             "+=1"
         );
         timeline.fromTo(
@@ -88,8 +92,36 @@ function Hero() {
 
 
             <div ref={VideoStillContainerRef} className="video-player-container">
-                <img src={VideoStill} alt="video still " />
+
+
+                <ReactPlayer
+                    url="https://www.youtube.com/watch?v=T5EDH_cB4J8"
+                    width="100%"
+                    height="405px"
+                    className="videoWrapper"
+                    playing
+                    playIcon={<div dangerouslySetInnerHTML={{
+                        __html: `
+                        <img src="${PlayButton}" alt="video play" class="play-icon" />
+                            <video
+                                width="720" height="405"
+                            loop
+                            muted
+                            autoplay
+                            playsinline
+                            src="${VideoTeaser}"
+                            class="video-teaser"
+                            />,
+                            
+                        ` }}></div>
+                    }
+                    light={VideoStill}
+                />
+
             </div>
+
+
+
 
 
         </div>

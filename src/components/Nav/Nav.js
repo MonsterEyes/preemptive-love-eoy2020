@@ -18,34 +18,15 @@ function Nav(props) {
 
     useEffect(() => {
 
-        //     let timeline = gsap.timeline({
-        //         scrollTrigger: {
-        //             trigger: NavRef.current,
-        //             start: "center center",
-        //             end: "bottom top",
-        //             markers: true,
-        //             scrub: true,
-        //             id: "center timeline",
+        let timeline = gsap.timeline();
+        timeline.fromTo(NavRef.current, { opacity: 0 }, { duration: 1, opacity: 1 });
 
-        //         }
-        //     });
-        //     timeline.fromTo(
-        //         [navButton.current],
-        //         { opacity: 0, scale: .8 },
-        //         { opacity: 1, scale: 1 }
-        //     )
 
-        //     timeline.fromTo(
-        //         [logoImage.current],
-        //         { opacity: 0, scale: .8 },
-        //         { opacity: 1, scale: 1 }
-        //     )
         ScrollTrigger.create({
             start: 'top -80',
             end: 99999,
             toggleClass: { className: 'scrolled', targets: NavRef.current }
         });
-
 
     }, [navButton, logoImage]);
 

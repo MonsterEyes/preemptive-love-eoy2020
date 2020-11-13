@@ -35,7 +35,7 @@ function App() {
       body1: 'A world where ',
       img1: section2Image1,
       alt1: '',
-      body2: 'no one digs through trash for food.',
+      body2: ["no one digs  ", <br />, " through trash ", <br />, "for food."],
       img2: section2Image2,
       alt2: '',
     },
