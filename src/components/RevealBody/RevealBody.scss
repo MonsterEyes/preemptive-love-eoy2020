@@ -1,6 +1,14 @@
 .reveal-fade {
     background: linear-gradient(#000, #FAE9D8);
     background-image: url("../../assets/images/texture.png"), linear-gradient(#000, #FAE9D8);
+    &:before {
+        content: "";
+        height: 300px;
+        width: 100%;
+        left: 0;
+        position: absolute;
+        background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
+    }
 }
 
 .reveal-container {

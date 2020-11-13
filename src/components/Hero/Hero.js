@@ -20,7 +20,8 @@ function Hero() {
     const video = useRef(null);
     const VideoStillContainerRef = useRef(null);
 
-    var timeline = gsap.timeline({ repeat: 0 });
+    const timeline = gsap.timeline({ repeat: 0 });
+    const timelineEarth = gsap.timeline({ repeat: 0 });
 
     let earthImage = backgroundImage
     if (window.innerWidth < 400) {
@@ -44,20 +45,23 @@ function Hero() {
 
             "+=1"
         );
-        timeline.fromTo(
-            [video.current],
-            { opacity: 0 },
-            { opacity: 1, repeat: 0, delay: .7 }
-        )
+
         timeline.fromTo(
             [headline.current],
             { scale: .9, opacity: 0 },
-            { scale: 1, opacity: 1, repeat: 0, duration: 1.5, delay: .5 }
+            { scale: 1, opacity: 1, repeat: 0, duration: 2, }
         )
         timeline.fromTo(
             [VideoStillContainerRef.current],
             { scale: .9, opacity: 0, marginTop: -80 },
-            { scale: 1, opacity: 1, marginTop: -100, delay: .5, duration: 1.2, repeat: 0 },
+            { scale: 1, opacity: 1, marginTop: -100, duration: 2, repeat: 0 },
+            "=-2"
+        )
+
+        timelineEarth.fromTo(
+            [video.current],
+            { opacity: 0 },
+            { opacity: 1, repeat: 0, duration: 9 }
         )
     }, [timeline]);
 
