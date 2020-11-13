@@ -59,8 +59,8 @@ function Hero() {
         //Earth
         timelineEarth.fromTo(
             [video.current],
-            { opacity: 0 },
-            { opacity: 1, repeat: 0, duration: 9 }
+            { opacity: 0, scale: 1 },
+            { opacity: 1, scale: 1.05, repeat: 0, duration: 9 }
         )
 
         //Scroll
