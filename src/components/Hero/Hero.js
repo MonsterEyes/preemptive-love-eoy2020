@@ -69,7 +69,7 @@ function Hero() {
                 trigger: HeroRef.current,
                 start: "center center",
                 end: "bottom top",
-                markers: true,
+                markers: false,
                 scrub: true,
                 id: "timelineScroll timeline",
                 pinReparent: true,

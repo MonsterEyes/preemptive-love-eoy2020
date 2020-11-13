@@ -25,7 +25,7 @@ function FormSection(props) {
                 trigger: FormSectionRef.current,
                 start: "top bottom",
                 end: "+=500",
-                markers: true,
+                markers: false,
                 scrub: true,
                 id: "Form timeline",
 

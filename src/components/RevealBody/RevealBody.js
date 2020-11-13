@@ -35,7 +35,7 @@ function RevealBody(props) {
                 start: "center center",
                 pin: true,
                 end: "bottom top",
-                markers: true,
+                markers: false,
                 scrub: true,
                 id: "center timeline",
                 pinReparent: true,
@@ -89,7 +89,7 @@ function RevealBody(props) {
                 trigger: revealSection.current,
                 start: "center center",
                 end: "bottom top",
-                markers: true,
+                markers: false,
                 scrub: true,
                 id: "center timeline",
 
@@ -108,7 +108,7 @@ function RevealBody(props) {
                 trigger: revealSection.current,
                 start: "center center",
                 end: "bottom top",
-                markers: true,
+                markers: false,
                 scrub: true,
                 id: "center timeline",
 

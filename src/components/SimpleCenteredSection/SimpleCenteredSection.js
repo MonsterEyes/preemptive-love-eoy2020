@@ -34,7 +34,7 @@ function SimpleCenteredSection(props) {
                 trigger: SimpleCenteredSectionRef.current,
                 start: "top bottom",
                 end: "bottom top",
-                markers: true,
+                markers: false,
                 scrub: true,
                 id: "Timeline Two",
 
@@ -44,13 +44,13 @@ function SimpleCenteredSection(props) {
 
         timeline.fromTo(
             [SimpleCenteredSectionRef.current],
-            { backgroundSize: '115%' },
+            { backgroundSize: '110%' },
             { backgroundSize: '100%' },
         )
 
         timelineTwo.fromTo(
             [body1.current],
-            { fontSize: "2vw" },
+            { fontSize: "2.8vw" },
             { fontSize: "3vw" }
         )
 
