@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import { useRef, useEffect } from "react";
 import { gsap } from "gsap"
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import './SimpleCenteredSection.scss';
@@ -17,19 +17,9 @@ function SimpleCenteredSection(props) {
 
     useEffect(() => {
 
-        let timeline = gsap.timeline({
-            scrollTrigger: {
-                trigger: SimpleCenteredSectionRef.current,
-                start: "top bottom",
-                end: "bottom top",
-                markers: false,
-                scrub: true,
-                id: "center timeline",
 
-            }
-        });
 
-        let timelineTwo = gsap.timeline({
+        let timelineCenter = gsap.timeline({
             scrollTrigger: {
                 trigger: SimpleCenteredSectionRef.current,
                 start: "top bottom",
@@ -42,16 +32,11 @@ function SimpleCenteredSection(props) {
         });
 
 
-        timeline.fromTo(
-            [SimpleCenteredSectionRef.current],
-            { backgroundSize: '110%' },
-            { backgroundSize: '100%' },
-        )
 
-        timelineTwo.fromTo(
+        timelineCenter.fromTo(
             [body1.current],
-            { fontSize: "2.8vw" },
-            { fontSize: "3vw" }
+            { fontSize: "2.8vw", y: "0", },
+            { fontSize: "3vw", y: "200px", }
         )
 
 
@@ -61,11 +46,11 @@ function SimpleCenteredSection(props) {
     return (
         <section ref={SimpleCenteredSectionRef} className="simple-centered-section">
             <div className="content-container">
-                <h2>
+                <p>
                     <span ref={body1}>{props.body1} </span><br />
                     <span ref={body2}>{props.body2} </span>
-                    <span ref={body3}>{props.body3} </span>
-                </h2>
+                </p>
+                <h2 ref={body3}>{props.body3}</h2>
             </div>
         </section>
 

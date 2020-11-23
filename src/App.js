@@ -1,6 +1,3 @@
-
-
-
 import './App.scss';
 import Nav from './components/Nav/Nav'
 import Hero from './components/Hero/Hero'
@@ -15,19 +12,22 @@ import section2Image1 from './assets/images/section2-image1.jpg'
 import section2Image2 from './assets/images/section2-image2.jpg'
 import section3Image1 from './assets/images/section3-image1.jpg'
 import section3Image2 from './assets/images/section3-image2.jpg'
+import section4Image1 from './assets/images/section4-image1.jpg'
+import section4Image2 from './assets/images/section4-image2.jpg'
 
 
 
 function App() {
 
+
   const revealArr = [
     {
       key: '1',
       pcolor: 'color-tan',
-      body1: ["A world where  ", <br />, " violence and disease"],
+      body1: ["A world where no one ", <br />, " digs through trash"],
       img1: section1Image1,
       alt1: '',
-      body2: 'do not get the last word.',
+      body2: 'for something to eat.',
       img2: section1Image2,
       alt2: '',
 
@@ -36,28 +36,34 @@ function App() {
     {
       key: '2',
       pcolor: 'color-tan',
-      body1: 'A world where ',
+      body1: ["A world where  ", <br />, " refugees have jobs "],
       img1: section2Image1,
       alt1: '',
-      body2: ["no one digs  ", <br />, " through trash ", <br />, "for food."],
+      body2: ["that put food  ", <br />, " on the table."],
       img2: section2Image2,
       alt2: '',
     },
     {
       key: '3',
       pcolor: 'color-blue-black',
-      body1: 'A world where refugees have jobs that put food on the table, wherever they are',
+      body1: ["A world where we   ", <br />, " stop the next crisis "],
       img1: section3Image1,
       alt1: '',
-      body2: 'using nothing more than a smartphone.',
+      body2: 'before it starts.',
       img2: section3Image2,
       alt2: '',
     },
+    {
+      key: '4',
+      pcolor: 'color-blue-black',
+      body1: 'A world where we live like',
+      img1: section4Image1,
+      alt1: '',
+      body2: 'we belong to each other.',
+      img2: section4Image2,
+      alt2: '',
+    },
   ]
-
-
-
-
 
   const bodyComponents = revealArr.map((body, index) =>
     <RevealBody
@@ -81,6 +87,8 @@ function App() {
   );
 
 
+
+
   return (
     <div className="App">
       <Nav
@@ -95,7 +103,9 @@ function App() {
 
 
       <SimpleCenteredSection
-        body1={["A world where we belong to each other ", <br />, "Where we can stop the next war, before it starts."]}>
+        body1={"Remake our world. "}
+        body2={"One meal, one job, one changed life at a time."}
+        body3={"Make your year-end gift today."}>
       </SimpleCenteredSection>
 
       <FormSection

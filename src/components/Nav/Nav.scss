@@ -2,12 +2,18 @@ nav {
     position: fixed;
     top: 0;
     width: 100vw;
-    z-index: 1;
+    z-index: 3;
+    @media only screen and (max-width: 768px) {
+        background: #000;
+    }
     .content-container {
         width: 90vw;
        display: flex;
        transition: all .5s;
-       padding: 3rem 0 1rem;
+       padding: 1.5rem 0 1rem;
+       @media only screen and (min-width: 768px) {
+        padding: 3rem 0 1rem;
+       }
     }
     &.scrolled {
         .content-container {
@@ -15,8 +21,8 @@ nav {
          }
     }
     button {
-        background: transparent;
-        border: 2px solid white;
+        background: #E91D2D;
+        border: none;
         color: white;
         padding: 5px 12px;
         display: inline-block;

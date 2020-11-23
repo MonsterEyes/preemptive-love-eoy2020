@@ -1,13 +1,20 @@
 .simple-centered-section {
-    background-image: url("../../assets/images/simple-centered-bg-sm.jpg");
+    background: url("../../assets/images/simple-centered-bg-sm.jpg") no-repeat center center;
     background-size: cover;
-    background-position: center;
     display: grid;
-    @media only screen and (min-width: 376px) {
-        background-image: url("../../assets/images/simple-centered-bg-lg.jpg");
+    @media only screen and (min-width: 480px) {
+        background: url("../../assets/images/simple-centered-bg-lg.jpg") no-repeat center center;
+        background-size: cover;
+        min-height: 140vh;
     }
+    // @media only screen and (min-width: 768px) {
+    //     background: url("../../assets/images/simple-centered-bg-lg.jpg") no-repeat center center;
+    //     background-size: cover;
+    //     min-height: 140vh;
+    // }
     .content-container {
         margin: 10vh auto auto; 
+        padding-top: 15vh;
     }
     h2 {
         font-size: 6.5vw;

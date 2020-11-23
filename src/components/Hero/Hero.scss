@@ -3,8 +3,16 @@
 .Hero {
   transition: .4s;
   background-color: black;
+  @media only screen and (max-width: 767px) {
+    //TODO instead of this maybe reduce the background image size
+    height: 100vh;
+  }
   @media only screen and (min-width: 768px) {
     min-height: 150vh;
+  }
+  .react-player__preview {
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
   }
   .videoTag {
     position: absolute;
@@ -15,6 +23,9 @@
     object-fit: cover;
     object-position: center;
     background-color:black;
+    @media only screen and (max-width: 767px) {
+      top: 20vh;
+    }
     img {
       width: 100%;
       @media (max-width:1200px) and (min-width:768px) {
@@ -32,27 +43,35 @@
     .intro-text { 
       color: white;
       position: relative;
-      font-size: 4.5vw;
+      font-size: 5vw;
       @media only screen and (min-width: 768px) {
         font-size: 2.25vw;
       }
-  
     }
   
     h1 {
       font-size: 8vw;
       line-height: 20px;
       color: white;
+      @media only screen and (max-width: 767px) {
+        margin-bottom: 20vh;
+        font-size: 10.5vw;
+      }
 
     }
   }
 
   .video-player-container {
     position: relative;
-    margin: -10vh auto 0;
-    //720 x 405
-    width: 720px;
-    height: 405px;
+    z-index:2;
+    width: 95vw    !important;
+    height: auto   !important;
+    margin-left: auto;
+    margin-right: auto;
+    @media only screen and (min-width: 768px) {
+      width: 720px !important;
+      height: 405px !important;
+    }
     .react-player__preview { 
       position: relative;
     }

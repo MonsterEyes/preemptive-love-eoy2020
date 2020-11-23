@@ -8,6 +8,17 @@ if (typeof window !== `undefined`) {
     gsap.core.globals("ScrollTrigger", ScrollTrigger)
 }
 
+function debounce(fn, ms) {
+    let timer
+    return _ => {
+        clearTimeout(timer)
+        timer = setTimeout(_ => {
+            timer = null
+            fn.apply(this, arguments)
+        }, ms)
+    };
+}
+
 
 function RevealBody(props) {
     const revealSection = useRef(null);
@@ -22,9 +33,25 @@ function RevealBody(props) {
     let timeline = null
     let timelineTwo = null
 
+    let pScroll = "-50px"
+    let image1Scroll = "-500px"
+    if (window.innerWidth < 768) {
+        //pScroll = "50px"
+        image1Scroll = "-300px"
+    }
+
+
+
 
 
     useEffect(() => {
+
+        const debouncedHandleResize = debounce(function handleResize() {
+            //window.location.href = window.location.href
+            window.location = window.location.href;
+        }, 500)
+
+        window.addEventListener('resize', debouncedHandleResize)
 
         //Sequence
         let timeline = gsap.timeline({
@@ -47,15 +74,15 @@ function RevealBody(props) {
         )
         timeline.fromTo(
             [image1.current],
-            { y: "0", opacity: 0, scale: .8 },
-            { y: "-150px", opacity: 1, scale: 1 }
+            { opacity: 0, scale: .8 },
+            { opacity: 1, scale: 1 }
             , '-=.5'
         )
 
         timeline.fromTo(
             [image1.current],
-            { y: "-150px", scale: 1, opacity: 1, },
-            { y: "-200px", scale: 1.03, opacity: .6, },
+            { scale: 1, opacity: 1, },
+            { scale: 1.04, opacity: .6, },
 
         )
         timeline.fromTo(
@@ -86,17 +113,22 @@ function RevealBody(props) {
         timelineTwo.fromTo(
             [pRef.current],
             { y: "0", },
-            { y: "-50px", },
+            { y: pScroll, },
             0
         )
-
         timelineTwo.fromTo(
             [progressRef.current],
             { scaleY: .1 },
             { scaleY: 10 },
             0
         )
+        timelineTwo.to(
+            [image1.current],
+            { y: image1Scroll, },
+            0
+        )
 
+        //The end
         let timelineThree = gsap.timeline({
             scrollTrigger: {
                 trigger: revealSection.current,
@@ -108,15 +140,14 @@ function RevealBody(props) {
 
             }
         });
-        timelineThree.fromTo(
+        timelineThree.to(
             [image2.current],
-            { y: "0px", opacity: 1, scale: 1, },
-            { y: "0px", opacity: 1, scale: 1.2, }
+            { y: "100px", opacity: 1, scale: 1.2, }
         )
 
 
 
-    }, [timeline, image1, image2, image3, pRef, body1, body2, body3, timelineTwo]);
+    }, [timeline, image1, image2, image3, pRef, body1, body2, body3, timelineTwo, image1Scroll, pScroll]);
 
 
     return (
@@ -131,7 +162,22 @@ function RevealBody(props) {
                         <span className="header" ref={body2}>{props.body2} </span>
                         {/* <span ref={body3}>{props.body3} </span> */}
 
+
                     </p>
+                    {/* <p style={{ fontSize: 40 }}>
+                        Imagine digging through scraps of garbage to feed your kids. Thousands of families face daily hunger—whether it’s because a pandemic plunged their refugee camp into lockdown, or an explosion plunged their city into chaos, or economic collapse plunged their entire country into what is now becoming the world’s biggest crisis.
+                            <br /><br />
+                            We are on the ground with food. For refugees in Iraq and Mexico. For our friends in Beirut. For starving families in Venezuela.
+                            <br /><br />
+                            We’re reinventing the way families get the help they need. We’re not like other aid groups—we are fast in a crisis. We don’t stay on the margins. We press in, to the frontlines. And we don’t outsource our work to expats. We lead with local teams who know the people, who know the needs, and who know what works.
+                            <br /><br />
+                            We’re only able to do all this because of you. You’re the reason we can rush food to refugees in quarantine before anyone else. Why we could start feeding	 people within 24 hours of the Beirut blast. You enable us to exhaust every means, even when it means going on foot, to reach starving families in Venezuela.
+                            <br /><br />
+                            You can give food that families can eat now. Food they can grow for themselves. Food as a lifeline when the whole world erupts.
+                            <br /><br />
+                            You can remake our world, one meal at a time.
+
+                        </p> */}
 
                     <div className="image-container">
 

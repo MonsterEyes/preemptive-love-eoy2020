@@ -27,8 +27,12 @@ function Hero() {
     const timelineEarth = gsap.timeline({ repeat: 0 });
 
     let earthImage = backgroundImage
+    let videoYStart = "0vh"
+    let videoYEnd = "-20vh"
     if (window.innerWidth < 768) {
         earthImage = backgroundImageSm
+        videoYStart = "-25vh"
+        videoYEnd = "-35vh"
     }
 
 
@@ -36,11 +40,11 @@ function Hero() {
 
     useEffect(() => {
 
-        //Text and Content
+        //On Load Text and Content Sequence
         timeline.fromTo(
             ".hero-text",
             { y: "50px", opacity: 0 },
-            { y: "0px", opacity: 1, stagger: 1.5 },
+            { y: "0px", opacity: 1, stagger: .85 },
 
             "+=1"
         );
@@ -49,18 +53,20 @@ function Hero() {
             { scale: 1.1, opacity: 0 },
             { scale: 1, opacity: 1, repeat: 0, duration: 2, }
         )
+
         timeline.fromTo(
             [VideoStillContainerRef.current],
-            { scale: .9, opacity: 0, marginTop: -80 },
-            { scale: 1, opacity: 1, marginTop: -100, duration: 2, repeat: 0 },
+            { scale: .9, opacity: 0, y: videoYStart },
+            { scale: 1, opacity: 1, y: videoYEnd, duration: 2, repeat: 0 },
             "=-2"
         )
+
 
         //Earth
         timelineEarth.fromTo(
             [video.current],
-            { opacity: 0, scale: 1 },
-            { opacity: 1, scale: 1.05, repeat: 0, duration: 9 }
+            { opacity: 0, },
+            { opacity: 1, repeat: 0, duration: 9 }
         )
 
         //Scroll
@@ -84,14 +90,10 @@ function Hero() {
             [headline.current],
             { y: "100px" }, 0
         )
-        timelineScroll.to(
-            [VideoStillContainerRef.current],
-            { y: "120px" }, 0
-        )
 
 
 
-    }, [timeline, timelineEarth, introTextRef]);
+    }, [timeline, timelineEarth, introTextRef, videoYStart, videoYEnd]);
 
 
 
@@ -129,14 +131,13 @@ function Hero() {
                 <ReactPlayer
                     url="https://www.youtube.com/watch?v=T5EDH_cB4J8"
                     width="100%"
-                    height="405px"
                     className="videoWrapper"
                     playing
                     playIcon={<div dangerouslySetInnerHTML={{
                         __html: `
                         <img src="${PlayButton}" alt="video play" class="play-icon" />
                             <video
-                                width="720" height="405"
+                                width="100%" height="auto"
                             loop
                             muted
                             autoplay

@@ -1,13 +1,29 @@
 .reveal-fade {
     background: linear-gradient(#000, #FAE9D8);
     background-image: url("../../assets/images/texture.png"), linear-gradient(#000, #FAE9D8);
-    &:before {
+    padding-bottom: 150px;
+    position: relative;
+    &:after {
         content: "";
-        height: 300px;
+        height: 100px;
         width: 100%;
         left: 0;
         position: absolute;
+        top: 0;
         background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
+        @media only screen and (min-width: 768px) {
+        height: 300px;
+        }
+    }
+    &:before {
+        content: "";
+        margin-top: -100px;
+        height: 100px;
+        width: 100%;
+        left: 0;
+        position: absolute;
+        top:0;
+        background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%);
     }
 }
 
@@ -15,7 +31,7 @@
     height: 100vh;
 }
 
-.reveal-section-0, .reveal-section-1{
+.reveal-section-0, .reveal-section-1, .reveal-section-2{
     .reveal-body {
         @media only screen and (min-width: 1100px) {
             width: 800px;
@@ -23,8 +39,10 @@
     }
 }
 
+
 .reveal-body {
-    width: 95vw;
+    //width: 95vw;
+    width: 100vw;
     margin: auto;
     @media only screen and (min-width: 1100px) {
         width: 1000px;
@@ -35,14 +53,21 @@
     }
 
     p {
-        top: 14vh;
-        width: 50%;
+        top: 20vh;
         text-align: left;
         font-size: 6.5vw;
         z-index: 1;
+        @media only screen and (min-width: 576px) {
+            font-size: 4vw;
+        }
         @media only screen and (min-width: 768px) {
+            font-size: 3.25vw;
+            top: 14vh;
+        }
+        @media only screen and (min-width: 992px) {
             font-size: 2.8vw;
         }
+        
         
     }
     .image-container {
@@ -54,6 +79,10 @@
         position: absolute;
         &:nth-child(1) {
             right: 0;
+            @media only screen and (max-width: 767px) {
+                width: 65vw;
+                top: 35vh;
+            }
         }
         &:nth-child(2) {
             margin-left: auto;
@@ -61,6 +90,10 @@
             left: 0;
             right: 0;
             text-align: center;
+            @media only screen and (max-width: 767px) {
+                top: 15vh;
+                left: -5vw;
+            }
         }
         &:nth-child(3) {
             margin-left: auto;
@@ -69,15 +102,23 @@
             right: 0;
             text-align: center;
         }
+        
     }
 
     .progress {
         width: 3px;
         height: 20px;
         background-color: #6C5C4C;
-
         position: absolute;
         bottom: 20vh;
+        @media only screen and (max-width: 767px) {
+            bottom: 8vh;
+            left: 0;
+            margin: auto;
+            right: 0;
+            z-index: -1;
+            height: 10px;
+        }
     }
 
     
