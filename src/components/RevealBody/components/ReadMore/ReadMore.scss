@@ -1,0 +1,93 @@
+.read-more-container {
+    font-size: 16px;
+    line-height: 20px;
+    button {
+        color: #2f2c2b;
+        padding: 0;
+        margin: 0;
+        font-size: 16px;
+        line-height: normal;
+        background-color: transparent;
+        border: none;
+        z-index: 99;
+        position: relative;
+        display: inline-block;
+        pointer-events: all;
+        outline: none;
+        box-shadow: none;
+        text-transform: uppercase;
+        &:hover {
+            cursor: pointer;
+            img  {
+                transform: scale(1.2);
+            }
+        }
+        img {
+            transition:all .3s;
+            top: inherit !important;
+            &.active {
+                transform: rotate(90deg);
+            }
+
+            
+        
+        }
+
+    }
+    p {
+        max-height: 0;
+        overflow: hidden;
+        transition: all .4s ease-in-out;
+        font-size: 1rem;
+        line-height: 1.5rem;
+        opacity: 0;
+        color:#FAE9D8;
+        padding: 1rem 1rem 3rem;
+        @media only screen and (min-width: 768px) {
+            width: 50vw;
+        }
+        &.active {
+            max-height: 100vh;
+            background-color: #0C1014;
+            opacity: .9;
+            opacity: 1;
+        }
+        
+    }
+    img {
+        position: relative;
+        display: inline-block;
+        margin-bottom: -5px;
+        max-width: 20px;
+        max-height: 20px;
+        top: 0
+    }
+    .close-button {
+        display: flex;
+        width: 100%;
+        color:#FAE9D8;
+        margin-top: 1.5rem;
+        .button-content {
+            margin: auto;
+        }
+        img {
+            top: inherit;
+            left: inherit;
+            margin-bottom: -3px;
+        }
+    }
+}
+
+.color-tan {
+    
+    p, button {
+        color:#FAE9D8;
+    }
+}
+
+.pin-spacer {
+    pointer-events: none;
+    display: none;
+}
+
+@media only screen and (max-width: 768px) { }

@@ -3,9 +3,7 @@ nav {
     top: 0;
     width: 100vw;
     z-index: 3;
-    @media only screen and (max-width: 768px) {
-        background: #000;
-    }
+    
     .content-container {
         width: 90vw;
        display: flex;
@@ -16,9 +14,13 @@ nav {
        }
     }
     &.scrolled {
+        transition: all .4s;
         .content-container {
             padding: 1rem 0 1rem;
-         }
+        }
+        @media only screen and (max-width: 768px) {
+            background: #000;
+        }
     }
     button {
         background: #E91D2D;

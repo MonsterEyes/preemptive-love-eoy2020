@@ -1,6 +1,6 @@
 .reveal-fade {
-    background: linear-gradient(#000, #FAE9D8);
-    background-image: url("../../assets/images/texture.png"), linear-gradient(#000, #FAE9D8);
+    background: linear-gradient(180deg, rgba(0,0,0,1) 25%, rgba(250,233,216,1) 100%);
+    background-image: url("../../assets/images/texture.png"), linear-gradient(180deg, rgba(0,0,0,1) 25%, rgba(250,233,216,1) 100%);
     padding-bottom: 150px;
     position: relative;
     &:after {
@@ -47,16 +47,17 @@
     @media only screen and (min-width: 1100px) {
         width: 1000px;
     }
-    p, .image-container {
+    .pClass, .image-container {
         position: absolute;
-        
     }
 
-    p {
+    .pClass {
         top: 20vh;
         text-align: left;
         font-size: 6.5vw;
         z-index: 1;
+        margin-bottom: 0;
+        
         @media only screen and (min-width: 576px) {
             font-size: 4vw;
         }
@@ -66,6 +67,9 @@
         }
         @media only screen and (min-width: 992px) {
             font-size: 2.8vw;
+        }
+        &.color-tan {
+            color:#FAE9D8;
         }
         
         
@@ -90,6 +94,7 @@
             left: 0;
             right: 0;
             text-align: center;
+            top: 2rem;
             @media only screen and (max-width: 767px) {
                 top: 15vh;
                 left: -5vw;
@@ -105,12 +110,17 @@
         
     }
 
+    .dollar-handle {
+        font-size: 20px;
+    }
+
     .progress {
         width: 3px;
         height: 20px;
         background-color: #6C5C4C;
         position: absolute;
         bottom: 20vh;
+        opacity: .7;
         @media only screen and (max-width: 767px) {
             bottom: 8vh;
             left: 0;
@@ -118,6 +128,9 @@
             right: 0;
             z-index: -1;
             height: 10px;
+        }
+        &.color-tan {
+            background-color:#FAE9D8;
         }
     }
 

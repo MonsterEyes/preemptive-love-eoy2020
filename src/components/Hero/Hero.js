@@ -1,27 +1,46 @@
-import React, { useRef, useEffect } from "react";
+import React, {
+    useRef,
+    useEffect,
+    useMemo
+} from "react";
 import './Hero.scss';
 import gsap from 'gsap'
-//import { TweenMax } from "gsap";
 import ReactPlayer from "react-player";
+import Lottie from "react-lottie";
+import animationData from "../../assets/lotties/RemakeHeaderv03.json";
 
 
-import backgroundImage from '../../assets/images/earth.jpg';
-import backgroundImageSm from '../../assets/images/earth-sm.jpg';
+import backgroundImage from '../../assets/images/musol-lg.jpg';
+import backgroundImageSm from '../../assets/images/musol-sm.jpg';
 import VideoStill from '../../assets/images/sample-video-pick.png';
-import PlayButton from '../../assets/images/play.svg';
+import PlayButton from '../../assets/images/icons/play.svg';
 import VideoTeaser from '../../assets/videos/To End War Silent Reel.mp4';
 
 
+
+
+const defaultOptions = {
+    loop: false,
+    autoplay: false,
+    animationData: animationData,
+    rendererSettings: {
+        preserveAspectRatio: "xMidYMid slice"
+    }
+};
+
+
+
 function Hero() {
+
     const HeroRef = useRef(null);
     const introTextRef = useRef(null);
     const one = useRef(null);
     const two = useRef(null);
     const three = useRef(null);
-    const headline = useRef(null);
     const video = useRef(null);
     const VideoStillContainerRef = useRef(null);
 
+    const lottieRef = useRef();
 
     const timeline = gsap.timeline({ repeat: 0 });
     const timelineEarth = gsap.timeline({ repeat: 0 });
@@ -29,7 +48,7 @@ function Hero() {
     let earthImage = backgroundImage
     let videoYStart = "0vh"
     let videoYEnd = "-20vh"
-    if (window.innerWidth < 768) {
+    if (window.innerWidth < 580) {
         earthImage = backgroundImageSm
         videoYStart = "-25vh"
         videoYEnd = "-35vh"
@@ -48,93 +67,92 @@ function Hero() {
 
             "+=1"
         );
-        timeline.fromTo(
-            [headline.current],
-            { scale: 1.1, opacity: 0 },
-            { scale: 1, opacity: 1, repeat: 0, duration: 2, }
-        )
+        timeline.add(() => lottieRef.current.play())
 
         timeline.fromTo(
             [VideoStillContainerRef.current],
             { scale: .9, opacity: 0, y: videoYStart },
-            { scale: 1, opacity: 1, y: videoYEnd, duration: 2, repeat: 0 },
-            "=-2"
+            { scale: 1, opacity: 1, y: videoYEnd, duration: 2, repeat: 0 }
         )
+        //timeline.add(() => lottieRef.current.pause(), "+=.5")
+
 
 
         //Earth
         timelineEarth.fromTo(
             [video.current],
             { opacity: 0, },
-            { opacity: 1, repeat: 0, duration: 9 }
+            { opacity: 1, repeat: 0, duration: 7 }
         )
 
         //Scroll
-        let timelineScroll = gsap.timeline({
-            scrollTrigger: {
-                trigger: HeroRef.current,
-                start: "center center",
-                end: "bottom top",
-                markers: false,
-                scrub: true,
-                id: "timelineScroll timeline",
-                pinReparent: true,
+        // let timelineScroll = gsap.timeline({
+        //     scrollTrigger: {
+        //         trigger: HeroRef.current,
+        //         start: "center center",
+        //         end: "bottom top",
+        //         markers: false,
+        //         scrub: true,
+        //         id: "timelineScroll timeline",
+        //         pinReparent: true,
 
-            }
-        });
-        timelineScroll.to(
-            [introTextRef.current],
-            { y: "80px" }, 0
-        )
-        timelineScroll.to(
-            [headline.current],
-            { y: "100px" }, 0
-        )
-
-
+        //     }
+        // });
+        // timelineScroll.to(
+        //     [VideoStillContainerRef.current],
+        //     { y: -100 },
+        // )
 
     }, [timeline, timelineEarth, introTextRef, videoYStart, videoYEnd]);
 
 
+    return useMemo(
+        (props) => {
+            return (
+                <div className="Hero" ref={HeroRef}>
 
-    return (
-        <div className="Hero" ref={HeroRef}>
+                    <div ref={video} className='videoTag'>
+                        <img src={earthImage} alt="background of earth" />
+                    </div>
 
+                    <div className="content">
+                        <div>
 
-
-
-            {/* <video ref={video} className='videoTag' autoPlay loop muted>
-                <source src={backgroundVideo} type='video/mp4' />
-            </video> */}
-            <div ref={video} className='videoTag'>
-                <img src={earthImage} alt="background of earth" />
-            </div>
-
-            <div className="content">
-                <div>
-                    <p className="intro-text" ref={introTextRef}>
-                        <span ref={one} className="hero-text">After the pandemic. </span>
-                        <span ref={two} className="hero-text">After the election. </span><br />
-                        <span ref={three} className="hero-text">After the violence and upheaval of 2020.</span>
-                    </p>
-
-                    <h1 ref={headline}>REMAKE OUR WORLD</h1>
-                </div>
-
-            </div>
+                            <p className="intro-text" ref={introTextRef}>
+                                <span ref={one} className="hero-text">After the pandemic. </span>
+                                <span ref={two} className="hero-text">After the election. </span><br />
+                                <span ref={three} className="hero-text">After the violence and upheaval of 2020.</span>
+                            </p>
 
 
 
-            <div ref={VideoStillContainerRef} className="video-player-container">
+                            <div className="controlled">
+                                <Lottie
+                                    options={defaultOptions}
+                                    height={150}
+                                    loop={false}
+                                    ref={lottieRef}
+                                />
+
+                            </div>
 
 
-                <ReactPlayer
-                    url="https://www.youtube.com/watch?v=T5EDH_cB4J8"
-                    width="100%"
-                    className="videoWrapper"
-                    playing
-                    playIcon={<div dangerouslySetInnerHTML={{
-                        __html: `
+                        </div>
+
+                    </div>
+
+
+
+                    <div ref={VideoStillContainerRef} className="video-player-container">
+
+
+                        <ReactPlayer
+                            url="https://www.youtube.com/watch?v=T5EDH_cB4J8"
+                            width="100%"
+                            className="videoWrapper"
+                            playing
+                            playIcon={<div dangerouslySetInnerHTML={{
+                                __html: `
                         <img src="${PlayButton}" alt="video play" class="play-icon" />
                             <video
                                 width="100%" height="auto"
@@ -147,23 +165,21 @@ function Hero() {
                             />,
                             
                         ` }}></div>
-                    }
-                    light={VideoStill}
-                />
+                            }
+                            light={VideoStill}
+                        />
 
-            </div>
-
-
+                    </div>
 
 
 
-        </div>
+
+
+                </div >
+            );
+        },
+        [earthImage]
     );
 }
 
 export default Hero;
-
-
-
-// After the pandemic. After the election. 
-//REMAKE OUR WORLD
