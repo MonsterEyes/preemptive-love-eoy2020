@@ -29,7 +29,9 @@
       position: absolute;
       z-index: 1;
       bottom:0; 
-      background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%);
+      @media only screen and (min-width: 768px) {
+        background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%);
+      }
     }
     img {
       width: 100%;
