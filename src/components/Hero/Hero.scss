@@ -67,15 +67,14 @@
       }
     }
   
-    h1 {
+    h1, .controlled {
       font-size: 8vw;
       line-height: 20px;
       color: white;
+      margin-bottom: 20vh;
       @media only screen and (max-width: 767px) {
-        margin-bottom: 20vh;
         font-size: 10.5vw;
       }
-
     }
   }
 
@@ -86,9 +85,19 @@
     height: auto   !important;
     margin-left: auto;
     margin-right: auto;
+    margin-top: -35vh;
     @media only screen and (min-width: 768px) {
       width: 720px !important;
       height: 405px !important;
+      margin-top: -20vh;
+    }
+    &:hover {
+      .play-icon {
+        transform: scale(1.2);
+      }
+    }
+    .play-icon {
+      transition: all .4s;
     }
     .react-player__preview { 
       position: relative;
@@ -98,7 +107,6 @@
       position: absolute;
       top: 0; left: 0; bottom: 0; right: 0;
     }
-
   }
 }
 

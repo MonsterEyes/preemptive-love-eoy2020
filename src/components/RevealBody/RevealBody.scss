@@ -41,8 +41,8 @@
 
 
 .reveal-body {
-    //width: 95vw;
-    width: 100vw;
+    position: relative;
+    
     margin: auto;
     @media only screen and (min-width: 1100px) {
         width: 1000px;
@@ -52,24 +52,26 @@
     }
 
     .pClass {
-        top: 20vh;
+        top: 30vh;
         text-align: left;
         font-size: 6.5vw;
         z-index: 1;
-        margin-bottom: 0;
         
         @media only screen and (min-width: 576px) {
             font-size: 4vw;
         }
         @media only screen and (min-width: 768px) {
             font-size: 3.25vw;
-            top: 14vh;
+            top: 12vh;
         }
         @media only screen and (min-width: 992px) {
             font-size: 2.8vw;
         }
         &.color-tan {
             color:#FAE9D8;
+        }
+        p {
+            margin-bottom: 0;
         }
         
         
@@ -84,8 +86,8 @@
         &:nth-child(1) {
             right: 0;
             @media only screen and (max-width: 767px) {
-                width: 65vw;
-                top: 35vh;
+                width: 45vw;
+                //top: 35vh;
             }
         }
         &:nth-child(2) {
@@ -94,10 +96,10 @@
             left: 0;
             right: 0;
             text-align: center;
-            top: 2rem;
+            top: 5rem;
             @media only screen and (max-width: 767px) {
                 top: 15vh;
-                left: -5vw;
+                left: -2.5vw;
             }
         }
         &:nth-child(3) {
@@ -119,10 +121,13 @@
         height: 20px;
         background-color: #6C5C4C;
         position: absolute;
-        bottom: 20vh;
+        top: 70vh;
         opacity: .7;
+        @media only screen and (min-width: 768px) {
+            left: 3rem;
+        }
         @media only screen and (max-width: 767px) {
-            bottom: 8vh;
+            top: 85vh;
             left: 0;
             margin: auto;
             right: 0;
@@ -133,16 +138,76 @@
             background-color:#FAE9D8;
         }
     }
-
-    
-    // div {
-    //     position: relative;
-    // }
-
-    // .p1 {
-    //     position: absolute;
-    //     top: 0;
-    // }
 }
+
+
+//flip
+.reveal-section-1, .reveal-section-3 {
+    .pClass {
+        text-align: right;
+        right: 0;
+        .read-more-container {
+            p {
+                text-align: left;
+            }
+            
+        }
+    }
+
+    img {
+        &:nth-child(1) {
+            right: 0;
+            left: 0;
+        }
+    }
+
+    .reveal-body  .progress {
+        @media only screen and (min-width: 768px) {
+            right: 3rem;
+            left: inherit;
+        }
+    
+    }
+}
+
+
+
+//content specific changes
+.reveal-section-0 {
+    .reveal-body img:nth-child(2) {
+        @media only screen and (max-width: 767px) {
+            left: -40vw;
+        }
+    }
+}
+
+.reveal-section-1 {
+    .reveal-body {
+        img {
+            &:nth-child(2) {
+                @media only screen and (min-width: 767px) {
+                    top: 15vh;
+                }
+            }
+        }
+    }
+}
+
+.reveal-section-3 {
+    .reveal-body {
+        .dollar-handle {
+            @media only screen and (min-width: 768px) {
+                display: inline-block;
+                width: 300px;
+            }
+        }
+    }
+}
+
+
+
+
+
+
 
 

@@ -18,21 +18,17 @@
         text-transform: uppercase;
         &:hover {
             cursor: pointer;
-            img  {
+            img, svg  {
                 transform: scale(1.2);
             }
         }
-        img {
+        img, svg {
             transition:all .3s;
             top: inherit !important;
             &.active {
                 transform: rotate(90deg);
             }
-
-            
-        
         }
-
     }
     p {
         max-height: 0;
@@ -43,6 +39,7 @@
         opacity: 0;
         color:#FAE9D8;
         padding: 1rem 1rem 3rem;
+        margin-left: -15px;
         @media only screen and (min-width: 768px) {
             width: 50vw;
         }
@@ -54,13 +51,9 @@
         }
         
     }
-    img {
-        position: relative;
-        display: inline-block;
+    svg {
         margin-bottom: -5px;
-        max-width: 20px;
-        max-height: 20px;
-        top: 0
+        margin-left: 5px;
     }
     .close-button {
         display: flex;
@@ -71,17 +64,27 @@
             margin: auto;
         }
         img {
-            top: inherit;
-            left: inherit;
+            position: relative;
+            display: inline-block;
+            max-width: 20px;
+            max-height: 20px;
+            top: 0;
             margin-bottom: -3px;
         }
     }
+
+    
 }
 
 .color-tan {
     
     p, button {
         color:#FAE9D8;
+    }
+    svg {
+        path {
+            fill: #FAE9D8
+        }     
     }
 }
 

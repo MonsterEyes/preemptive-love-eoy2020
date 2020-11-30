@@ -9,12 +9,26 @@ import navLogo from './assets/images/logo.svg'
 
 import section1Image1 from './assets/images/section1-image1.jpg'
 import section1Image2 from './assets/images/section1-image2.jpg'
+import section1Image2sm from './assets/images/section1-image2-sm.jpg'
 import section2Image1 from './assets/images/section2-image1.jpg'
+import section2Image1sm from './assets/images/section2-image1-sm.jpg'
 import section2Image2 from './assets/images/section2-image2.jpg'
 import section3Image1 from './assets/images/section3-image1.jpg'
 import section3Image2 from './assets/images/section3-image2.jpg'
+import section3Image2sm from './assets/images/section3-image2-sm.jpg'
 import section4Image1 from './assets/images/section4-image1.jpg'
 import section4Image2 from './assets/images/section4-image2.jpg'
+
+
+let section1Image2Let = section1Image2
+let section2Image1Let = section2Image1
+let section3Image2Let = section3Image2
+
+if (window.innerWidth < 768) {
+  section1Image2Let = section1Image2sm
+  section2Image1Let = section2Image1sm
+  section3Image2Let = section3Image2sm
+}
 
 
 
@@ -25,11 +39,11 @@ function App() {
     {
       key: '1',
       pcolor: 'color-tan',
-      body1: ["You can make a world where no one ", <br />, " digs through trash"],
+      body1: ["You can make ", <br />, "a world where no one ", <br />, " digs through trash"],
       img1: section1Image1,
       alt1: '',
       body2: 'for something to eat.',
-      img2: section1Image2,
+      img2: section1Image2Let,
       alt2: '',
       dollarHandle: '$60 to feed a starving family for a month',
       readMore: [
@@ -50,8 +64,8 @@ function App() {
     {
       key: '2',
       pcolor: 'color-tan',
-      body1: ["You can make a world where  ", <br />, " refugees have jobs "],
-      img1: section2Image1,
+      body1: ["You can make ", <br />, "a world where  ", <br />, " refugees have jobs "],
+      img1: section2Image1Let,
       alt1: '',
       body2: ["that put food  ", <br />, " on the table."],
       img2: section2Image2,
@@ -73,11 +87,11 @@ function App() {
     {
       key: '3',
       pcolor: 'color-blue-black',
-      body1: ["You can make a world where we   ", <br />, " stop the next crisis "],
+      body1: ["You can make ", <br />, "a world where we   ", <br />, " stop the next crisis "],
       img1: section3Image1,
       alt1: '',
       body2: 'before it starts.',
-      img2: section3Image2,
+      img2: section3Image2Let,
       alt2: '',
       dollarHandle: '$35 to provide medical care for war-torn families',
       readMore: [
@@ -96,7 +110,7 @@ function App() {
     {
       key: '4',
       pcolor: 'color-blue-black',
-      body1: 'You can make a world where we live like',
+      body1: ['You can make ', <br />, 'a world where we live like'],
       img1: section4Image1,
       alt1: '',
       body2: 'we belong to each other.',

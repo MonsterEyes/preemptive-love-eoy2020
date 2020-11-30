@@ -30,7 +30,6 @@ function RevealBody(props) {
     const pRef = useRef(null);
     const body1 = useRef(null);
     const body2 = useRef(null);
-    const dollarRef = useRef(null);
     const ReadRef = useRef(null);
     const progressRef = useRef(null);
     let timeline = null
@@ -38,13 +37,14 @@ function RevealBody(props) {
 
     let pScroll = "-50px"
     let image1Scroll = "-500px"
+    let image1ScaleStart = .8
+    let image1ScaleEnd = 1
     if (window.innerWidth < 768) {
-        //pScroll = "50px"
-        image1Scroll = "-300px"
+        image1Scroll = "30px"
+        pScroll = "-150px"
+        //image1ScaleStart = 1.3
+        //image1ScaleEnd = 1.5
     }
-
-
-
 
 
     useEffect(() => {
@@ -85,7 +85,7 @@ function RevealBody(props) {
         timeline.fromTo(
             [image1.current],
             { scale: 1, opacity: 1, },
-            { scale: 1.04, opacity: .6, },
+            { scale: 1.04, opacity: .85, },
 
         )
         timeline.fromTo(
@@ -94,20 +94,15 @@ function RevealBody(props) {
             { opacity: 1, scale: 1 },
             '-=.5'
         )
+
+        ///redo for mobile
         timeline.fromTo(
             [image2.current],
-            { y: "100px", opacity: 0, scale: .8 },
-            { y: "0px", opacity: 1, scale: 1, },
+            { y: "100px", opacity: 0, scale: image1ScaleStart },
+            { y: "0px", opacity: 1, scale: image1ScaleEnd, },
             '-=.5'
         )
 
-
-        timeline.fromTo(
-            [dollarRef.current],
-            { y: "100px", opacity: 0, scale: .8 },
-            { y: "0px", opacity: 1, scale: 1, },
-            '-=.1'
-        )
         timeline.fromTo(
             [ReadRef.current],
             { opacity: 0, },
@@ -128,9 +123,8 @@ function RevealBody(props) {
 
             }
         });
-        timelineTwo.fromTo(
+        timelineTwo.to(
             [pRef.current],
-            { y: "0", },
             { y: pScroll, },
             0
         )
@@ -168,7 +162,7 @@ function RevealBody(props) {
 
 
 
-    }, [timeline, image1, image2, image3, pRef, body1, body2, dollarRef, ReadRef, timelineTwo, image1Scroll, pScroll]);
+    }, [timeline, image1, image2, image3, pRef, body1, body2, ReadRef, image1ScaleEnd, image1ScaleStart, timelineTwo, image1Scroll, pScroll]);
 
 
     return (
@@ -182,22 +176,24 @@ function RevealBody(props) {
                             <span ref={body1}>{props.body1} </span><br />
                             <span ref={body2} className="header">{props.body2} </span>
                         </p>
-                        <span ref={dollarRef} className="dollar-handle">{props.dollarHandle}</span>
+
                         <div ref={ReadRef}>
+                            <span className="dollar-handle">{props.dollarHandle}</span>
                             <ReadMore readMore={props.readMore} />
                         </div>
 
-
                     </div>
+                    <div className={`progress ${props.pcolor} `} ref={progressRef}></div>
 
                     <div className="image-container">
                         <img ref={image1} className="image1" src={props.img1} alt={props.alt1} />
                         <img ref={image2} src={props.img2} alt={props.alt2} />
                     </div>
 
-                    <div className={`progress ${props.pcolor} `} ref={progressRef}></div>
+
 
                 </div>
+
             </div>
 
         </section>

@@ -47,10 +47,10 @@ function SimpleCenteredSection(props) {
         <section ref={SimpleCenteredSectionRef} className="simple-centered-section">
             <div className="content-container">
                 <p>
-                    <span ref={body1}>{props.body1} </span><br />
-                    <span ref={body2}>{props.body2} </span>
+                    <span className="body1" ref={body1}>{props.body1} </span><br />
+                    <span className="body2" ref={body2}>{props.body2} </span>
                 </p>
-                <h2 ref={body3}>{props.body3}</h2>
+                <h2 className="body3" ref={body3}>{props.body3}</h2>
             </div>
         </section>
 
