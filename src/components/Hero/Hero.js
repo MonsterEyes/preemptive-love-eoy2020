@@ -44,7 +44,7 @@ function Hero() {
     let lottieSize = 120
     if (window.innerWidth < 580) {
         earthImage = backgroundImageSm
-        videoYEnd = 100
+        videoYEnd = 130
         lottieSize = 80
         console.log('small?')
     }

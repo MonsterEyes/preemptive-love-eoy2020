@@ -11,6 +11,7 @@ if (typeof window !== `undefined`) {
 
 function SimpleCenteredSection(props) {
     const SimpleCenteredSectionRef = useRef(null);
+    const SimpleCenteredContentRef = useRef(null);
     const body1 = useRef(null);
     const body2 = useRef(null);
     const body3 = useRef(null);
@@ -31,21 +32,35 @@ function SimpleCenteredSection(props) {
             }
         });
 
-
-
-        timelineCenter.fromTo(
+        timelineCenter.to(
             [body1.current],
-            { fontSize: "2.8vw", y: "0", },
-            { fontSize: "3vw", y: "200px", }
+            { y: 100, },
+            0
+        )
+        timelineCenter.fromTo(
+            [SimpleCenteredContentRef.current],
+            { opacity: .6, },
+            { opacity: 1, },
+            0
+        )
+        timelineCenter.fromTo(
+            [SimpleCenteredSectionRef.current],
+            {
+                filter: "grayscale(1)"
+            },
+            {
+                filter: "grayscale(0)"
+            },
+            0
         )
 
 
-    }, [body1, body2, body3, SimpleCenteredSectionRef]);
+    }, [body1, body2, body3, SimpleCenteredContentRef, SimpleCenteredSectionRef]);
 
 
     return (
         <section ref={SimpleCenteredSectionRef} className="simple-centered-section">
-            <div className="content-container">
+            <div ref={SimpleCenteredContentRef} className="content-container">
                 <p>
                     <span className="body1" ref={body1}>{props.body1} </span><br />
                     <span className="body2" ref={body2}>{props.body2} </span>

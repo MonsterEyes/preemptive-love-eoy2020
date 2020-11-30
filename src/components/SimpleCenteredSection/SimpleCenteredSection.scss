@@ -16,6 +16,12 @@
         margin: 10vh auto auto; 
         padding-top: 15vh;
     }
+    .body1 {
+        font-size: 30px;
+        @media only screen and (min-width: 768px) {
+            font-size: 40px;
+        }
+    }
     .body2 {
         font-size: 18px;
         @media only screen and (min-width: 768px) {

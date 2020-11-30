@@ -113,7 +113,10 @@
     }
 
     .dollar-handle {
-        font-size: 20px;
+        font-size: 14px;
+        @media only screen and (min-width: 768px) {
+            font-size: 20px;
+        }
     }
 
     .progress {
@@ -179,6 +182,15 @@
             left: -40vw;
         }
     }
+    
+}
+
+.reveal-section-1 {
+    .reveal-body img:nth-child(2) {
+        @media only screen and (max-width: 767px) {
+            right: -40vw;
+        }
+    }
 }
 
 .reveal-section-1 {
@@ -200,6 +212,12 @@
                 display: inline-block;
                 width: 300px;
             }
+        }
+    }
+    .dollar-handle {
+        @media only screen and (max-width: 767px) {
+            width: 200px;
+            display: inline-block;
         }
     }
 }

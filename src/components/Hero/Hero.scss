@@ -4,12 +4,11 @@
   transition: .4s;
   background-color: black;
   @media only screen and (max-width: 767px) {
-    //TODO instead of this maybe reduce the background image size
     height: 100vh;
   }
   @media only screen and (min-width: 768px) {
     min-height: 120vh;
-  }
+  } 
   .react-player__preview {
     background-size: contain !important;
     background-repeat: no-repeat !important;
@@ -29,7 +28,7 @@
       left: 0;
       position: absolute;
       z-index: 1;
-      bottom:0;
+      bottom:0; 
       background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%);
     }
     img {
