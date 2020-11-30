@@ -51,11 +51,12 @@ function RevealBody(props) {
 
     useEffect(() => {
 
-        const debouncedHandleResize = debounce(function handleResize() {
-            window.location = window.location.href;
-        }, 500)
 
-        if (window.innerWidth < 768) {
+
+        if (window.innerWidth > 768) {
+            const debouncedHandleResize = debounce(function handleResize() {
+                window.location = window.location.href;
+            }, 500)
             window.addEventListener('resize', debouncedHandleResize)
         }
 
