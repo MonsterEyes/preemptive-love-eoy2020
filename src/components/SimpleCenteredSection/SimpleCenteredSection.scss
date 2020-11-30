@@ -3,6 +3,9 @@
     background-size: cover;
     display: grid;
     @media only screen and (min-width: 480px) {
+        min-height: 160vh;
+    }
+    @media only screen and (min-width: 700px) {
         background: url("../../assets/images/simple-centered-bg-lg.jpg") no-repeat center center;
         background-size: cover;
         min-height: 140vh;
@@ -13,6 +16,9 @@
     //     min-height: 140vh;
     // }
     .content-container {
+        @media  (min-width: 400px) and (max-width: 767px) {
+            margin: 20vh auto auto; 
+        }
         margin: 10vh auto auto; 
         padding-top: 15vh;
     }
