@@ -39,9 +39,11 @@ function RevealBody(props) {
     let image1Scroll = "-350px"
     let image1ScaleStart = .8
     let image1ScaleEnd = 1
+    let image2YScroll = "100px"
     if (window.innerWidth < 768) {
         image1Scroll = "30px"
-        pScroll = "-150px"
+        pScroll = "-120px"
+        image2YScroll = "200px"
         //image1ScaleStart = 1.3
         //image1ScaleEnd = 1.5
     }
@@ -157,7 +159,7 @@ function RevealBody(props) {
         });
         timelineThree.to(
             [image2.current],
-            { y: "100px", opacity: 1, scale: 1.2, }
+            { y: image2YScroll, opacity: 1, scale: 1.2, }
         )
 
 

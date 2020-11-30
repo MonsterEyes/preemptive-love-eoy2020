@@ -43,16 +43,7 @@ function SimpleCenteredSection(props) {
             { opacity: 1, },
             0
         )
-        timelineCenter.fromTo(
-            [SimpleCenteredSectionRef.current],
-            {
-                filter: "grayscale(1)"
-            },
-            {
-                filter: "grayscale(0)"
-            },
-            0
-        )
+
 
 
     }, [body1, body2, body3, SimpleCenteredContentRef, SimpleCenteredSectionRef]);
