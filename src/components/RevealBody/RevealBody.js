@@ -52,12 +52,12 @@ function RevealBody(props) {
     useEffect(() => {
 
         const debouncedHandleResize = debounce(function handleResize() {
-            if (window.innerWidth < 768) {
-                window.location = window.location.href;
-            }
+            window.location = window.location.href;
         }, 500)
 
-        window.addEventListener('resize', debouncedHandleResize)
+        if (window.innerWidth < 768) {
+            window.addEventListener('resize', debouncedHandleResize)
+        }
 
         //Sequence
         let timeline = gsap.timeline({
