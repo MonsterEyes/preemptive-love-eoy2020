@@ -48,6 +48,9 @@ function Hero() {
         lottieSize = 80
         console.log('small?')
     }
+    if (window.innerWidth < 900) {
+        lottieSize = 80
+    }
 
     useEffect(() => {
 
