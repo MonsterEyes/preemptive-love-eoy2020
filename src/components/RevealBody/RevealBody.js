@@ -164,7 +164,7 @@ function RevealBody(props) {
 
 
 
-    }, [timeline, image1, image2, image3, pRef, body1, body2, ReadRef, image1ScaleEnd, image1ScaleStart, timelineTwo, image1Scroll, pScroll]);
+    }, [timeline, image1, image2, image3, pRef, body1, body2, ReadRef, image1ScaleEnd, image1ScaleStart, timelineTwo, image1Scroll, pScroll, image2YScroll]);
 
 
     return (
