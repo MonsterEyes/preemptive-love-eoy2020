@@ -32,6 +32,9 @@
             &.active {
                 transform: rotate(90deg);
             }
+            @media only screen and (max-width: 767px) {
+                width: 15px;
+            }
         }
     }
     p {
