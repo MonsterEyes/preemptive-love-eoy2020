@@ -8,7 +8,6 @@ if (typeof window !== `undefined`) {
     gsap.core.globals("ScrollTrigger", ScrollTrigger)
 }
 
-
 function SimpleCenteredSection(props) {
     const SimpleCenteredSectionRef = useRef(null);
     const SimpleCenteredContentRef = useRef(null);
@@ -17,9 +16,6 @@ function SimpleCenteredSection(props) {
     const body3 = useRef(null);
 
     useEffect(() => {
-
-
-
         let timelineCenter = gsap.timeline({
             scrollTrigger: {
                 trigger: SimpleCenteredSectionRef.current,
@@ -42,11 +38,6 @@ function SimpleCenteredSection(props) {
             { y: -30, },
             0
         )
-
-
-
-
-
 
     }, [body1, body2, body3, SimpleCenteredContentRef, SimpleCenteredSectionRef]);
 

@@ -31,9 +31,7 @@ if (window.innerWidth < 768) {
 }
 
 
-
 function App() {
-
 
   const revealArr = [
     {
@@ -60,7 +58,6 @@ function App() {
         "You can remake our world, one meal at a time."
       ],
     },
-
     {
       key: '2',
       pcolor: 'color-tan',
@@ -134,9 +131,7 @@ function App() {
   const bodyComponents = revealArr.map((body, index) =>
     <RevealBody
       key={body.key}
-
       pcolor={body.pcolor}
-
       index={index}
 
       body1={body.body1}
@@ -153,15 +148,10 @@ function App() {
     />
   );
 
-
-
-
   return (
     <div className="App">
 
-      <Nav
-        img1={navLogo}>
-      </Nav>
+      <Nav img1={navLogo}></Nav>
 
       <Hero></Hero>
 

@@ -44,8 +44,7 @@ function RevealBody(props) {
         image1Scroll = "50px"
         pScroll = "-120px"
         image2YScroll = "200px"
-        //image1ScaleStart = 1.3
-        //image1ScaleEnd = 1.5
+
     }
 
 
@@ -63,7 +62,6 @@ function RevealBody(props) {
         let timeline = gsap.timeline({
             scrollTrigger: {
                 trigger: revealSection.current,
-                //start: "center bottom" and end: "center top"
                 start: "center center",
                 pin: true,
                 end: "bottom top",
@@ -98,7 +96,6 @@ function RevealBody(props) {
             '-=.5'
         )
 
-        ///redo for mobile
         timeline.fromTo(
             [image2.current],
             { y: "100px", opacity: 0, scale: image1ScaleStart },
@@ -192,11 +189,7 @@ function RevealBody(props) {
                         <img ref={image1} className="image1" src={props.img1} alt={props.alt1} />
                         <img ref={image2} src={props.img2} alt={props.alt2} />
                     </div>
-
-
-
                 </div>
-
             </div>
 
         </section>

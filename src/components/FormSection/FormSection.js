@@ -4,19 +4,16 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import './FormSection.scss';
 import formImage from '../../assets/images/form-image.jpg';
 
-
 if (typeof window !== `undefined`) {
     gsap.registerPlugin(ScrollTrigger)
     gsap.core.globals("ScrollTrigger", ScrollTrigger)
 }
-
 
 function FormSection(props) {
     const FormSectionRef = useRef(null);
     const formRef = useRef(null);
     const body1 = useRef(null);
     const image1 = useRef(null);
-    //let timeline = null
 
     useEffect(() => {
 

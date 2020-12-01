@@ -2,12 +2,13 @@ import React, {
     useRef,
     useEffect,
 } from "react";
+
 import './Hero.scss';
 import gsap from 'gsap'
 import ReactPlayer from "react-player";
 import Lottie from "react-lottie";
-import animationData from "../../assets/lotties/RemakeHeaderv03.json";
 
+import animationData from "../../assets/lotties/RemakeHeader.json";
 import backgroundImage from '../../assets/images/mosul-lg2.jpg';
 import backgroundImagexlg from '../../assets/images/mosul-xlg2.jpg';
 import backgroundImageSm from '../../assets/images/mosul-sm.jpg';
@@ -31,23 +32,24 @@ function Hero() {
     const one = useRef(null);
     const two = useRef(null);
     const three = useRef(null);
-    const video = useRef(null);
+    const four = useRef(null);
+    const mainBackgroundImageRef = useRef(null);
     const VideoStillContainerRef = useRef(null);
 
     const lottieRef = useRef();
 
     const timeline = gsap.timeline({ repeat: 0 });
-    const timelineEarth = gsap.timeline({ repeat: 0 });
+    const timelineBackgrounnd = gsap.timeline({ repeat: 0 });
 
-    let earthImage = backgroundImage
+    let mainBackgroundImage = backgroundImage
     let videoYEnd = 150
     let lottieSize = 100
     if (window.innerWidth < 580) {
-        earthImage = backgroundImageSm
+        mainBackgroundImage = backgroundImageSm
         videoYEnd = 130
     }
     if (window.innerWidth > 1200) {
-        earthImage = backgroundImagexlg
+        mainBackgroundImage = backgroundImagexlg
     }
     if (window.innerWidth < 400) {
         lottieSize = 50
@@ -70,12 +72,11 @@ function Hero() {
             { scale: .9, opacity: 0, },
             { scale: 1, opacity: 1, duration: 2, repeat: 0 }
         )
-        //timeline.add(() => lottieRef.current.pause(), "+=.5")
 
 
-        //Earth
-        timelineEarth.fromTo(
-            [video.current],
+        //Background
+        timelineBackgrounnd.fromTo(
+            [mainBackgroundImageRef.current],
             { opacity: 0, },
             { opacity: 1, repeat: 0, duration: 7 }
         )
@@ -99,15 +100,14 @@ function Hero() {
             { y: videoYEnd }
         )
 
-    }, [timeline, timelineEarth, introTextRef, videoYEnd]);
-
+    }, [timeline, timelineBackgrounnd, introTextRef, videoYEnd]);
 
 
     return (
         <div className="Hero" ref={HeroRef}>
 
-            <div ref={video} className='videoTag'>
-                <img src={earthImage} alt="background of earth" />
+            <div ref={mainBackgroundImageRef} className='mainBackground'>
+                <img src={mainBackgroundImage} alt="background of earth" />
             </div>
 
             <div className="content">
@@ -117,7 +117,7 @@ function Hero() {
                         <span ref={one} className="hero-text">After the pandemic, </span>
                         <span ref={two} className="hero-text">After the election, </span><br />
                         <span ref={three} className="hero-text">After the violence and upheaval of 2020.</span><br />
-                        <span ref={three} className="hero-text header-start">You can</span>
+                        <span ref={four} className="hero-text header-start">You can</span>
 
                     </p>
 
@@ -138,23 +138,24 @@ function Hero() {
                     url="https://www.youtube.com/watch?v=T5EDH_cB4J8"
                     width="100%"
                     className="videoWrapper"
+                    light={VideoStill}
                     playing
                     playIcon={window.innerWidth > 580 ? <div dangerouslySetInnerHTML={{
                         __html: `
-                                                <img src="${PlayButton}" alt="video play" class="play-icon" />
-                                                
-                                                    <video
-                                                        width="100%" height="auto"
-                                                    loop
-                                                    muted
-                                                    autoplay
-                                                    playsinline
-                                                    src="${VideoTeaser}"
-                                                    class="video-teaser"
-                                                    />,
-                                                    
-                                                ` }}></div> : <img src={PlayButton} alt="video play" class="play-icon" />}
-                    light={VideoStill}
+                            <img src="${PlayButton}" alt="video play" class="play-icon" />
+                            
+                                <video
+                                    width="100%" height="auto"
+                                loop
+                                muted
+                                autoplay
+                                playsinline
+                                src="${VideoTeaser}"
+                                class="video-teaser"
+                            />,
+                                
+                        ` }}></div> : <img src={PlayButton} alt="video play" class="play-icon" />
+                    }
                 />
             </div>
 

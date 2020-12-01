@@ -13,14 +13,11 @@ function Nav(props) {
     const NavRef = useRef(null);
     const navButton = useRef(null);
     const logoImage = useRef(null);
-    //let timeline = null
 
 
     useEffect(() => {
-
         let timeline = gsap.timeline();
         timeline.fromTo(NavRef.current, { opacity: 0 }, { duration: 1, opacity: 1 });
-
 
         ScrollTrigger.create({
             start: 'top -80',
@@ -30,21 +27,15 @@ function Nav(props) {
 
     }, [navButton, logoImage]);
 
-
-
     return (
         <nav ref={NavRef} >
             <div className="content-container">
                 <img ref={logoImage} className="logo-image" src={props.img1} alt={props.alt1} />
-
                 <button ref={navButton}>
                     Donate
                 </button>
-
-
             </div>
         </nav>
-
     );
 }
 

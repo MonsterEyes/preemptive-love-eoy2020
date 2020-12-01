@@ -1,9 +1,6 @@
-
-
 html {
   background: #fff;
 }
-
 
 .App {
   text-align: center;
@@ -32,26 +29,6 @@ body {
     color:  var(--color-blue-black);
   }
 }
-
-// @font-face {
-//   font-family: 'RingsideRegular';
-//   src: url('../src/assets/fonts/RingsideRegular-Medium.woff'); 
-// }
-
-// @font-face {
-//   font-family: 'DharmaGothic_Bold';
-//   src: url('../src/assets/fonts/DharmaGothicE_Bold_R.woff'); 
-// }
-
-// @font-face {
-//   font-family: 'MercuryDisplay-Roman';
-//   src: url('../src/assets/fonts/MercuryDisplay-Roman.woff'); 
-// }
-
-// @font-face {
-//   font-family: 'TradeGothicLTStd-Bold';
-//   src: url('../src/assets/fonts/TradeGothicLTStd-Bold.woff'); 
-// }
 
 @font-face {
   font-family: 'DINPro-Bold';
@@ -112,8 +89,6 @@ button {
     vertical-align: middle;
 }
 
-
-
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -127,9 +102,6 @@ button {
 
 section {
   min-height: 100vh;
-  // display: flex;
-  // align-items: center;
-  // justify-content: center;
 }
 
 .white {
