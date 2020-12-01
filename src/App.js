@@ -39,7 +39,7 @@ function App() {
     {
       key: '1',
       pcolor: 'color-tan',
-      body1: ["You can make ", <br />, "a world where no one ", <br />, " digs through trash"],
+      body1: ["You can make a world where ", <br />, " no one digs through trash"],
       img1: section1Image1,
       alt1: '',
       body2: 'for something to eat.',
@@ -64,10 +64,10 @@ function App() {
     {
       key: '2',
       pcolor: 'color-tan',
-      body1: ["You can make ", <br />, "a world where  ", <br />, " refugees have jobs "],
+      body1: ["You can make a world ", <br />, "where refugees have jobs "],
       img1: section2Image1Let,
       alt1: '',
-      body2: ["that put food  ", <br />, " on the table."],
+      body2: ["that put food on the table."],
       img2: section2Image2,
       alt2: '',
       dollarHandle: '$100 to help create digital jobs for refugees',
@@ -87,7 +87,7 @@ function App() {
     {
       key: '3',
       pcolor: 'color-blue-black',
-      body1: ["You can make ", <br />, "a world where we   ", <br />, " stop the next crisis "],
+      body1: ["You can make a world where ", <br />, "we stop the next crisis "],
       img1: section3Image1,
       alt1: '',
       body2: 'before it starts.',
@@ -110,7 +110,7 @@ function App() {
     {
       key: '4',
       pcolor: 'color-blue-black',
-      body1: ['You can make ', <br />, 'a world where we live like'],
+      body1: ['You can make a world where we live like'],
       img1: section4Image1,
       alt1: '',
       body2: 'we belong to each other.',
@@ -171,7 +171,7 @@ function App() {
 
       <SimpleCenteredSection
         body1={"Remake our world. "}
-        body2={"One meal, one job, one changed life at a time."}
+        body2={["One meal, one job, ", <br />, "one changed life at a time. "]}
         body3={"Make your year-end gift today."}>
       </SimpleCenteredSection>
 

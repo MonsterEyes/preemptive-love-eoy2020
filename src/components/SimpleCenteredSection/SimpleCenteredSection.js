@@ -33,16 +33,18 @@ function SimpleCenteredSection(props) {
         });
 
         timelineCenter.to(
-            [body1.current],
-            { y: 100, },
-            0
-        )
-        timelineCenter.fromTo(
             [SimpleCenteredContentRef.current],
-            { opacity: .6, },
-            { opacity: 1, },
+            { y: 150, },
             0
         )
+        timelineCenter.to(
+            [body3.current],
+            { y: -30, },
+            0
+        )
+
+
+
 
 
 
@@ -51,12 +53,12 @@ function SimpleCenteredSection(props) {
 
     return (
         <section ref={SimpleCenteredSectionRef} className="simple-centered-section">
-            <div ref={SimpleCenteredContentRef} className="content-container">
+            <div ref={SimpleCenteredContentRef} className="content-container uppercase">
                 <p>
-                    <span className="body1" ref={body1}>{props.body1} </span><br />
-                    <span className="body2" ref={body2}>{props.body2} </span>
+                    <span className="body1 header" ref={body1}>{props.body1} </span><br />
+                    <span className="body2 header" ref={body2}>{props.body2} </span>
                 </p>
-                <h2 className="body3" ref={body3}>{props.body3}</h2>
+                <h2 className="body3 header-cond " ref={body3}>{props.body3}</h2>
             </div>
         </section>
 

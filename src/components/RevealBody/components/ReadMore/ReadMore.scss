@@ -1,8 +1,9 @@
 .read-more-container {
     font-size: 16px;
     line-height: 20px;
+    padding-top: 1rem;
     button {
-        color: #2f2c2b;
+        color: #0C1014;
         padding: 0;
         margin: 0;
         line-height: normal;
@@ -87,12 +88,15 @@
 
 .color-tan {
     
-    p, button {
+    p {
         color:#FAE9D8;
+    }
+    button {
+        color:white;
     }
     svg {
         path {
-            fill: #FAE9D8
+            fill: white;
         }     
     }
 }

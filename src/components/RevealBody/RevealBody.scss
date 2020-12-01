@@ -34,7 +34,7 @@
 .reveal-section-0, .reveal-section-1, .reveal-section-2{
     .reveal-body {
         @media only screen and (min-width: 1100px) {
-            width: 800px;
+            width: 910px;
         }
     }
 }
@@ -62,13 +62,22 @@
         }
         @media only screen and (min-width: 768px) {
             font-size: 3.25vw;
-            top: 12vh;
+            top: 17vh;
         }
         @media only screen and (min-width: 992px) {
             font-size: 2.8vw;
         }
+        
         &.color-tan {
-            color:#FAE9D8;
+            p {
+                color: white;
+            }
+            .colored {
+                color: #FFB56C;
+            }
+        }
+        .colored {
+            color: #9B4D00;
         }
         p {
             margin-bottom: 0;
@@ -86,8 +95,8 @@
         &:nth-child(1) {
             right: 0;
             @media only screen and (max-width: 767px) {
-                width: 45vw;
-                //top: 35vh;
+                width: 65vw;
+                top: 0vh;
             }
         }
         &:nth-child(2) {
@@ -209,8 +218,8 @@
     .reveal-body {
         .dollar-handle {
             @media only screen and (min-width: 768px) {
-                display: inline-block;
-                width: 300px;
+                display: inline-flex;
+                width: 320px;
             }
         }
     }

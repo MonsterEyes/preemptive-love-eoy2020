@@ -18,7 +18,7 @@ img {
   --color-blue: #6CABE3;
   --color-dark-blue: #253447;
   --color-red: #EB0029;
-  --color-dark-grey: #2f2c2b;
+  --color-dark-grey: #0C1014;
   --color-tan: #FAE9D8;
   --color-blue-black: #0C1014;
 }
@@ -33,36 +33,61 @@ body {
   }
 }
 
+// @font-face {
+//   font-family: 'RingsideRegular';
+//   src: url('../src/assets/fonts/RingsideRegular-Medium.woff'); 
+// }
+
+// @font-face {
+//   font-family: 'DharmaGothic_Bold';
+//   src: url('../src/assets/fonts/DharmaGothicE_Bold_R.woff'); 
+// }
+
+// @font-face {
+//   font-family: 'MercuryDisplay-Roman';
+//   src: url('../src/assets/fonts/MercuryDisplay-Roman.woff'); 
+// }
+
+// @font-face {
+//   font-family: 'TradeGothicLTStd-Bold';
+//   src: url('../src/assets/fonts/TradeGothicLTStd-Bold.woff'); 
+// }
+
 @font-face {
-  font-family: 'RingsideRegular';
-  src: url('../src/assets/fonts/RingsideRegular-Medium.woff'); 
+  font-family: 'DINPro-Bold';
+  src: url('../src/assets/fonts/DINPro-Bold.woff'); 
 }
 
 @font-face {
-  font-family: 'DharmaGothic_Bold';
-  src: url('../src/assets/fonts/DharmaGothicE_Bold_R.woff'); 
+  font-family: 'DINPro-CondBold';
+  src: url('../src/assets/fonts/DINPro-CondBold.woff'); 
 }
 
 @font-face {
-  font-family: 'MercuryDisplay-Roman';
-  src: url('../src/assets/fonts/MercuryDisplay-Roman.woff'); 
+  font-family: 'DINPro-Light';
+  src: url('../src/assets/fonts/DINPro-Light.woff'); 
 }
 
 @font-face {
-  font-family: 'TradeGothicLTStd-Bold';
-  src: url('../src/assets/fonts/TradeGothicLTStd-Bold.woff'); 
+  font-family: 'SourceSerifPro-Regular';
+  src: url('../src/assets/fonts/SourceSerifPro-Regular.woff'); 
 }
 
 body, p {
-  font-family: 'MercuryDisplay-Roman', sans-serif;
+  font-family: 'DINPro-Light', sans-serif;
   color: var(--color-dark-grey);
-  //margin: 0;
+}
+
+h1, .header-cond {
+  font-family: 'DINPro-CondBold', sans-serif;  
 }
 
 h1, h2, h3, h4 , h5, h6, .header {
-  font-family: 'TradeGothicLTStd-Bold', sans-serif;
-  //margin: 0;
-  
+  font-family: 'DINPro-Bold', sans-serif; 
+}
+
+.read-more-content {
+  font-family: 'SourceSerifPro-Regular', serif; 
 }
 
 .content-container {
@@ -107,3 +132,18 @@ section {
   // justify-content: center;
 }
 
+.white {
+  color: #ffffff;
+}
+
+.light-orange {
+  color: #FFB56C
+}
+
+.dark-orange {
+  color: #9B4D00
+}
+
+.uppercase {
+  text-transform: uppercase;
+}

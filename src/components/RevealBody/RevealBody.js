@@ -41,7 +41,7 @@ function RevealBody(props) {
     let image1ScaleEnd = 1
     let image2YScroll = "100px"
     if (window.innerWidth < 768) {
-        image1Scroll = "30px"
+        image1Scroll = "50px"
         pScroll = "-120px"
         image2YScroll = "200px"
         //image1ScaleStart = 1.3
@@ -51,14 +51,13 @@ function RevealBody(props) {
 
     useEffect(() => {
 
-
-
-        if (window.innerWidth > 768) {
-            const debouncedHandleResize = debounce(function handleResize() {
+        //reload the page if the window was resized to allow gsap to get new values, this has been disabled on mobile because of how iphone resizes the window after the first scroll
+        const debouncedHandleResize = debounce(function handleResize() {
+            if (window.innerWidth > 768) {
                 window.location = window.location.href;
-            }, 500)
-            window.addEventListener('resize', debouncedHandleResize)
-        }
+            }
+        }, 500)
+        window.addEventListener('resize', debouncedHandleResize)
 
         //Sequence
         let timeline = gsap.timeline({
@@ -177,12 +176,12 @@ function RevealBody(props) {
                     <div ref={pRef} className={`pClass ${props.pcolor} `}>
 
                         <p>
-                            <span ref={body1}>{props.body1} </span><br />
-                            <span ref={body2} className="header">{props.body2} </span>
+                            <span ref={body1} className="header">{props.body1} </span><br />
+                            <span ref={body2} className="header colored">{props.body2} </span>
                         </p>
 
                         <div ref={ReadRef}>
-                            <span className="dollar-handle">{props.dollarHandle}</span>
+                            <span className="header dollar-handle">{props.dollarHandle}</span>
                             <ReadMore readMore={props.readMore} />
                         </div>
 
