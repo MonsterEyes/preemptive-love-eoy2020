@@ -3,7 +3,6 @@ import { gsap, Power2, Power1 } from "gsap"
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import './RevealBody.scss';
 import ReadMore from "./components/ReadMore/ReadMore"
-//import Accordion from "../Accordion/Accordion";
 
 if (typeof window !== `undefined`) {
     gsap.registerPlugin(ScrollTrigger)
@@ -44,9 +43,7 @@ function RevealBody(props) {
         image1Scroll = "50px"
         pScroll = "-120px"
         image2YScroll = "200px"
-
     }
-
 
     useEffect(() => {
 
@@ -166,7 +163,7 @@ function RevealBody(props) {
 
 
     return (
-        <section ref={revealSection} className={`reveal-section reveal-section-${props.index} `}>
+        <section key={"_key" + props.id} ref={revealSection} className={`reveal-section reveal-section-${props.index} `}>
 
             <div className="content-container">
                 <div className="reveal-body">

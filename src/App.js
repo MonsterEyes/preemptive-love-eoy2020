@@ -35,7 +35,7 @@ function App() {
 
   const revealArr = [
     {
-      key: '1',
+      id: '1',
       pcolor: 'color-tan',
       body1: ["You can make a world where ", <br />, " no one digs through trash"],
       img1: section1Image1,
@@ -59,7 +59,7 @@ function App() {
       ],
     },
     {
-      key: '2',
+      id: '2',
       pcolor: 'color-tan',
       body1: ["You can make a world ", <br />, "where refugees have jobs "],
       img1: section2Image1Let,
@@ -82,7 +82,7 @@ function App() {
       ]
     },
     {
-      key: '3',
+      id: '3',
       pcolor: 'color-blue-black',
       body1: ["You can make a world where ", <br />, "we stop the next crisis "],
       img1: section3Image1,
@@ -105,7 +105,7 @@ function App() {
       ]
     },
     {
-      key: '4',
+      id: '4',
       pcolor: 'color-blue-black',
       body1: ['You can make a world where we live like'],
       img1: section4Image1,
@@ -130,7 +130,8 @@ function App() {
 
   const bodyComponents = revealArr.map((body, index) =>
     <RevealBody
-      key={body.key}
+      id={body.id}
+      key={body.id}
       pcolor={body.pcolor}
       index={index}
 
