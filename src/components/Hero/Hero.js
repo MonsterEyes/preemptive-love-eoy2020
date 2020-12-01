@@ -113,11 +113,11 @@ function Hero() {
             <div className="content">
                 <div>
 
-                    <p className="intro-text header-cond" ref={introTextRef}>
+                    <p className="intro-text header-cond uppercase" ref={introTextRef}>
                         <span ref={one} className="hero-text">After the pandemic, </span>
                         <span ref={two} className="hero-text">After the election, </span><br />
                         <span ref={three} className="hero-text">After the violence and upheaval of 2020.</span><br />
-                        <span ref={three} className="hero-text header-start uppercase">You can</span>
+                        <span ref={three} className="hero-text header-start">You can</span>
 
                     </p>
 
