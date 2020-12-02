@@ -6,7 +6,10 @@
   }
   @media only screen and (min-width: 768px) {
     min-height: 120vh;
-  } 
+  }
+  .hero-text {
+    opacity: 0;
+  }
   .react-player__preview {
     background-size: contain !important;
     background-repeat: no-repeat !important;

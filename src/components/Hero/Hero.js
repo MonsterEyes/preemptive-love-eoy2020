@@ -59,21 +59,14 @@ function Hero() {
     }
 
     useEffect(() => {
+        timeline.staggerTo(".hero-text", 2, { opacity: 1 }, 0.7, "-=3")
 
-        //On Load Text and Content Sequence
-        timeline.fromTo(
-            ".hero-text",
-            { y: "10px", opacity: 0 },
-            { y: "0px", opacity: 1, stagger: .85 },
-
-            "+=1"
-        );
-        timeline.add(() => lottieRef.current.play())
+        timeline.add(() => lottieRef.current.play(), "-=1.5")
 
         timeline.fromTo(
             [VideoStillContainerRef.current],
             { scale: .9, opacity: 0, },
-            { scale: 1, opacity: 1, duration: 2, repeat: 0 }
+            { scale: 1, opacity: 1, duration: 2, repeat: 0 }, "-=1.5"
         )
 
 
@@ -149,6 +142,7 @@ function Hero() {
                     width="100%"
                     className="videoWrapper"
                     light={VideoStill}
+                    controls='true'
                     playing
                     playIcon={window.innerWidth > 580 ?
                         <div dangerouslySetInnerHTML={{
