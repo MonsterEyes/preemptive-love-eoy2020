@@ -8,7 +8,7 @@ import gsap from 'gsap'
 import ReactPlayer from "react-player";
 import Lottie from "react-lottie";
 
-import animationData from "../../assets/lotties/RemakeHeader.json";
+import animationData from '../../assets/lotties/RemakeHeader.json';
 import backgroundImage from '../../assets/images/mosul-lg2.jpg';
 import backgroundImagexlg from '../../assets/images/mosul-xlg2.jpg';
 import backgroundImageSm from '../../assets/images/mosul-sm.jpg';
