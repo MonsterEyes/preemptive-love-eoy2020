@@ -107,7 +107,7 @@ function App() {
     {
       id: '4',
       pcolor: 'color-blue-black',
-      body1: ['You can make a world where we live like'],
+      body1: ['You can make a world ', <br />, 'where we live like'],
       img1: section4Image1,
       alt1: '',
       body2: 'we belong to each other.',

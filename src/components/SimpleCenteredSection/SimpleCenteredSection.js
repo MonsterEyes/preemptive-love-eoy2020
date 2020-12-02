@@ -49,7 +49,7 @@ function SimpleCenteredSection(props) {
                     <span className="body1 header" ref={body1}>{props.body1} </span><br />
                     <span className="body2 header" ref={body2}>{props.body2} </span>
                 </p>
-                <h2 className="body3 header-cond " ref={body3}>{props.body3}</h2>
+                <h2 className="body3 trade-gothic-b " ref={body3}>{props.body3}</h2>
             </div>
         </section>
 

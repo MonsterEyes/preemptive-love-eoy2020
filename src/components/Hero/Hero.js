@@ -37,6 +37,7 @@ function Hero() {
     const VideoStillContainerRef = useRef(null);
 
     const lottieRef = useRef();
+    const lottieControlledRef = useRef();
 
     const timeline = gsap.timeline({ repeat: 0 });
     const timelineBackgrounnd = gsap.timeline({ repeat: 0 });
@@ -97,8 +98,16 @@ function Hero() {
         });
         timelineScroll.to(
             [VideoStillContainerRef.current],
-            { y: videoYEnd }
+            { y: videoYEnd },
+            0
         )
+        timelineScroll.to(
+            [lottieControlledRef.current],
+            { y: 50 },
+            0
+        )
+
+
 
     }, [timeline, timelineBackgrounnd, introTextRef, videoYEnd]);
 
@@ -118,10 +127,9 @@ function Hero() {
                         <span ref={two} className="hero-text">After the election, </span><br />
                         <span ref={three} className="hero-text">After the violence and upheaval of 2020.</span><br />
                         <span ref={four} className="hero-text header-start">You can</span>
-
                     </p>
 
-                    <div className="controlled">
+                    <div className="controlled" ref={lottieControlledRef}>
                         <Lottie
                             options={defaultOptions}
                             height={lottieSize}
@@ -140,8 +148,9 @@ function Hero() {
                     className="videoWrapper"
                     light={VideoStill}
                     playing
-                    playIcon={window.innerWidth > 580 ? <div dangerouslySetInnerHTML={{
-                        __html: `
+                    playIcon={window.innerWidth > 580 ?
+                        <div dangerouslySetInnerHTML={{
+                            __html: `
                             <img src="${PlayButton}" alt="video play" class="play-icon" />
                             
                                 <video
@@ -154,7 +163,9 @@ function Hero() {
                                 class="video-teaser"
                             />,
                                 
-                        ` }}></div> : <img src={PlayButton} alt="video play" class="play-icon" />
+                        ` }}></div>
+                        :
+                        <img src={PlayButton} alt="video play" class="play-icon" />
                     }
                 />
             </div>

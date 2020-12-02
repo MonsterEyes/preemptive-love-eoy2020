@@ -57,6 +57,7 @@ function RevealBody(props) {
 
         //Sequence
         let timeline = gsap.timeline({
+            y: (i, target) => -2000 * .009,
             scrollTrigger: {
                 trigger: revealSection.current,
                 start: "center center",

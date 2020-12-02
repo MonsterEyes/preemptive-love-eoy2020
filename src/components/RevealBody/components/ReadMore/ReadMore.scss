@@ -47,13 +47,14 @@
         opacity: 0;
         color:#FAE9D8;
         padding: 1rem 1rem 3rem;
-        margin: 1rem auto;
+        margin: 1rem -2.5vw;
         @media only screen and (min-width: 768px) {
             width: 50vw;
+            margin: 1rem auto;
         }
         &.active {
             max-height: 150vh;
-            background-color: #0C1014;
+            background-color: rgba(12,16,20, 1);
             opacity: .9;
             opacity: 1;
         }
@@ -61,7 +62,7 @@
     }
     svg {
         margin-bottom: -5px;
-        margin-left: 5px;
+        margin-left: 1rem;
     }
     .close-button {
         display: flex;
