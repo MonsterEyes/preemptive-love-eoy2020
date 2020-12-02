@@ -38,7 +38,7 @@ function RevealBody(props) {
     let image1Scroll = "-350px"
     let image1ScaleStart = .8
     let image1ScaleEnd = 1
-    let image2YScroll = "100px"
+    let image2YScroll = "150px"
     if (window.innerWidth < 768) {
         image1Scroll = "50px"
         pScroll = "-120px"
