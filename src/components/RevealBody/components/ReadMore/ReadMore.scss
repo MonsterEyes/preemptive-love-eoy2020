@@ -62,7 +62,10 @@
     }
     svg {
         margin-bottom: -5px;
-        margin-left: 1rem;
+        margin-left: .25rem;
+        @media (min-width: 768px) {
+            margin-left: 1rem;
+        }
     }
     .close-button {
         display: flex;

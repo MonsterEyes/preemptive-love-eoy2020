@@ -62,7 +62,7 @@ function RevealBody(props) {
                 trigger: revealSection.current,
                 start: "center center",
                 pin: true,
-                end: "bottom top",
+                end: "+=1000",
                 markers: false,
                 scrub: true,
                 id: "center timeline",
@@ -114,7 +114,7 @@ function RevealBody(props) {
             scrollTrigger: {
                 trigger: revealSection.current,
                 start: "center center",
-                end: "bottom top",
+                end: "+=1200",
                 markers: false,
                 scrub: true,
                 id: "center timeline",
