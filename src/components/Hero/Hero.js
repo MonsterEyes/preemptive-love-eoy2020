@@ -121,7 +121,7 @@ function Hero() {
                         <span ref={one} className="hero-text">After the pandemic, </span>
                         <span ref={two} className="hero-text">After the election, </span><br />
                         <span ref={three} className="hero-text">After the violence and upheaval of 2020, </span>
-                        <span ref={four} className="hero-text">You can.</span>
+                        <span ref={four} className="hero-text">You can</span>
                     </p>
 
                     <div className="controlled" ref={lottieControlledRef}>
