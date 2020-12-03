@@ -39,7 +39,7 @@ function RevealBody(props) {
     let timeline = null
     let timelineTwo = null
 
-    let pScroll = "-50px"
+    let pScroll = "-30px"
     let image1Scroll = "-350px"
     let image1ScaleStart = .8
     let image1ScaleEnd = 1
