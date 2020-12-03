@@ -32,7 +32,7 @@ function Nav(props) {
             <div className="content-container">
                 <img ref={logoImage} className="logo-image" src={props.img1} alt={props.alt1} />
                 <button ref={navButton}>
-                    Donate Now
+                    Give Now
                 </button>
             </div>
         </nav>

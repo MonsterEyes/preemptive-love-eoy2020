@@ -43,7 +43,7 @@ function App() {
       body2: 'for something to eat.',
       img2: section1Image2Let,
       alt2: '',
-      dollarHandle: '$60 to feed a starving family for a month',
+      dollarHandle: ["Give ", <span className='dollars-up'> $60 </span>, " to feed a starving family for a month"],
       readMore: [
         "Imagine digging through scraps of garbage to feed your kids. Thousands of families face daily hunger—whether it’s because a pandemic plunged their refugee camp into lockdown, or an explosion plunged their city into chaos, or economic collapse plunged their entire country into what is now becoming the world’s biggest crisis.",
         <br />, <br />,
@@ -67,7 +67,7 @@ function App() {
       body2: ["that put food on the table."],
       img2: section2Image2,
       alt2: '',
-      dollarHandle: '$100 to help create digital jobs for refugees',
+      dollarHandle: ["Give ", <span className='dollars-up'> $100 </span>, " to help create digital jobs for refugees"],
       readMore: [
         "More than 200 million people will be displaced in the coming years. That’s 200 million people without a way to provide for themselves. Our friends deserve a chance to work, to earn a living—before it’s too late. Before they get recruited into violence, as a means to survive. ",
         <br />, <br />,
@@ -90,7 +90,7 @@ function App() {
       body2: 'before it starts.',
       img2: section3Image2Let,
       alt2: '',
-      dollarHandle: '$35 to provide medical care for war-torn families',
+      dollarHandle: ["Give ", <span className='dollars-up'> $35 </span>, " to provide medical care for war-torn families"],
       readMore: [
         "We are fast in a crisis. But what if you could stop the worst—before it happens? The war that doesn’t break out. The families who don’t have to flee.",
         <br />, <br />,
@@ -113,7 +113,7 @@ function App() {
       body2: 'we belong to each other.',
       img2: section4Image2,
       alt2: '',
-      dollarHandle: '$250 to help launch gatherings of peacemakers around the world',
+      dollarHandle: ["Give ", <span className='dollars-up'> $250 </span>, " to help launch gatherings of peacemakers around the world"],
       readMore: [
         "The ties that bind all humanity together were pulled almost to breaking this year. But the hardships of 2020 offered a reminder that we belong to each other. Humanity rises together, or it falls together.",
         <br />, <br />,

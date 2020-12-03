@@ -8,7 +8,6 @@ import gsap from 'gsap'
 import ReactPlayer from "react-player";
 import Lottie from "react-lottie";
 
-//import animationData from '../../assets/lotties/RemakeHeader.json';
 import animationData from "../../assets/lotties/Remake Our World Write on v03.json";
 
 import backgroundImage from '../../assets/images/mosul-lg2.jpg';
@@ -16,7 +15,7 @@ import backgroundImagexlg from '../../assets/images/mosul-xlg2.jpg';
 import backgroundImageSm from '../../assets/images/mosul-sm.jpg';
 import VideoStill from '../../assets/images/sample-video-pick.jpg';
 import PlayButton from '../../assets/images/icons/play.svg';
-import VideoTeaser from '../../assets/videos/EOY-Teaser.mp4';
+import VideoTeaser from '../../assets/videos/Remake-loopable.mp4';
 
 const defaultOptions = {
     loop: false,
@@ -45,11 +44,11 @@ function Hero() {
     const timelineBackgrounnd = gsap.timeline({ repeat: 0 });
 
     let mainBackgroundImage = backgroundImage
-    let videoYEnd = 150
+    let videoYEnd = 220
     let lottieSize = 100
     if (window.innerWidth < 580) {
         mainBackgroundImage = backgroundImageSm
-        videoYEnd = 130
+        videoYEnd = 100
     }
     if (window.innerWidth > 1200) {
         mainBackgroundImage = backgroundImagexlg
@@ -59,14 +58,15 @@ function Hero() {
     }
 
     useEffect(() => {
-        timeline.staggerTo(".hero-text", 2, { opacity: 1 }, 0.7, "-=3")
+        //timeline.staggerTo(".hero-text", 2, { opacity: 1 }, 0.5, "-=3")
+        timeline.to(".hero-text", { opacity: 1 }, .3,)
 
-        timeline.add(() => lottieRef.current.play(), "-=1.5")
+        timeline.add(() => lottieRef.current.play(), .7)
 
         timeline.fromTo(
             [VideoStillContainerRef.current],
             { scale: .9, opacity: 0, },
-            { scale: 1, opacity: 1, duration: 2, repeat: 0 }, "-=1.5"
+            { scale: 1, opacity: 1, duration: 2, repeat: 0 }, .7
         )
 
 
@@ -120,8 +120,8 @@ function Hero() {
                     <p className="intro-text header-cond uppercase" ref={introTextRef}>
                         <span ref={one} className="hero-text">After the pandemic, </span>
                         <span ref={two} className="hero-text">After the election, </span><br />
-                        <span ref={three} className="hero-text">After the violence and upheaval of 2020.</span><br />
-                        <span ref={four} className="hero-text header-start">You can</span>
+                        <span ref={three} className="hero-text">After the violence and upheaval of 2020, </span>
+                        <span ref={four} className="hero-text">You can.</span>
                     </p>
 
                     <div className="controlled" ref={lottieControlledRef}>

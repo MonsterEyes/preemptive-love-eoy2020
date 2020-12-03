@@ -3,6 +3,7 @@
   background-color: black;
   @media only screen and (max-width: 767px) {
     height: 100vh;
+    margin-bottom: -10vh;
   }
   @media only screen and (min-width: 768px) {
     min-height: 120vh;
@@ -70,7 +71,7 @@
       }
       @media only screen and (max-width: 767px) {
         margin-bottom: 0;
-        padding: 13vh 0 0;
+        padding: 20vh 0 0;
       }
       @media (min-width: 400px) and (max-width: 900px) {
         font-size: 1.5rem;
@@ -94,6 +95,7 @@
       font-size: 8vw;
       line-height: 20px;
       color: white;
+      margin-top: 1vh;
       margin-bottom: 20vh;
       @media (min-width: 480px)  {
         margin-bottom: 35vh;
@@ -127,6 +129,7 @@
     }
     .play-icon {
       transition: all .4s;
+      opacity: .8;
     }
     .react-player__preview { 
       position: relative;
