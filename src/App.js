@@ -67,7 +67,7 @@ function App() {
       body2: ["that put food on the table."],
       img2: section2Image2,
       alt2: '',
-      dollarHandle: ["Give ", <span className='dollars-up'> $100 </span>, " to help create digital jobs for refugees"],
+      dollarHandle: ["Give ", <span className='dollars-up'> $100 </span>, " to create digital jobs for refugees"],
       readMore: [
         "More than 200 million people will be displaced in the coming years. That’s 200 million people without a way to provide for themselves. Our friends deserve a chance to work, to earn a living—before it’s too late. Before they get recruited into violence, as a means to survive. ",
         <br />, <br />,
@@ -113,7 +113,7 @@ function App() {
       body2: 'we belong to each other.',
       img2: section4Image2,
       alt2: '',
-      dollarHandle: ["Give ", <span className='dollars-up'> $250 </span>, " to help launch gatherings of peacemakers around the world"],
+      dollarHandle: ["Give ", <span className='dollars-up'> $250 </span>, " to launch gatherings of peacemakers around the world"],
       readMore: [
         "The ties that bind all humanity together were pulled almost to breaking this year. But the hardships of 2020 offered a reminder that we belong to each other. Humanity rises together, or it falls together.",
         <br />, <br />,
