@@ -19,20 +19,20 @@ nav {
         .content-container {
             padding: 1rem 0 1rem;
         }
-        @media only screen and (max-width: 768px) {
-            //background: #000;
-        }
     }
     button {
         background: #E91D2D;
         border: none;
         color: white;
-        padding: 1em 2em;
         font-weight: 700;
         font-size: 1em;
         text-transform: uppercase;
         display: inline-block;
         margin-left: auto;
         border-radius: 0;
+        padding: .5em 1em;
+        @media (min-width: 768px) {
+            padding: 1em 2em;
+        }
     }     
 }
