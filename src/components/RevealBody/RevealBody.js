@@ -110,8 +110,8 @@ function RevealBody(props) {
 
         timeline.fromTo(
             [image2.current],
-            { y: "100px", opacity: 0, scale: image1ScaleStart },
-            { y: "0px", opacity: 1, scale: image1ScaleEnd, },
+            { y: 100, opacity: 0, scale: image1ScaleStart },
+            { y: 0, opacity: 1, scale: image1ScaleEnd, },
             '-=.5'
         )
 
@@ -167,9 +167,10 @@ function RevealBody(props) {
 
             }
         });
-        timelineThree.to(
+        timelineThree.fromTo(
             [image2.current],
-            { y: image2YScroll, opacity: 1, scale: 1.2, }
+            { y: 0, scale: image1ScaleEnd, },
+            { y: image2YScroll, scale: 1.2, }
         )
 
 
